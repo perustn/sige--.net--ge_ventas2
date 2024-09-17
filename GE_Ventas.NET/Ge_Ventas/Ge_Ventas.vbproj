@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{642F78FC-A798-41E7-98E1-A8D050EA4D71}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Ge_Ventas._FrmPrincipal</StartupObject>
+    <RootNamespace>Ge_Ventas</RootNamespace>
+    <AssemblyName>Ge_Ventas</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\_SIGEDebug\</OutputPath>
+    <DocumentationFile>Ge_Ventas.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>D:\_SIGEDebug\</OutputPath>
+    <DocumentationFile>Ge_Ventas.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SIGEApp_93x128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\_SIGEUserControls\adodb.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\_SIGEUserControls\Janus.Data.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.ButtonBar.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\_SIGEUserControls\Janus.Windows.ButtonBar.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.CalendarCombo.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\_SIGEUserControls\Janus.Windows.CalendarCombo.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\_SIGEUserControls\Janus.Windows.Common.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.ExplorerBar.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\_SIGEUserControls\Janus.Windows.ExplorerBar.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.GridEX.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\_SIGEUserControls\Janus.Windows.GridEX.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.Ribbon.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\_SIGEUserControls\Janus.Windows.Ribbon.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Windows.TimeLine.v4, Version=4.0.36.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\_SIGEUserControls\Janus.Windows.UI.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="ProyectoBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\SIGE\_SIGEUserControls\ProyectoBase.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WinFormsControls, Version=5.0.6800.22650, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\SIGE\_SIGEUserControls\WinFormsControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsBtnSeguridad.vb" />
+    <Compile Include="clsForm.vb" />
+    <Compile Include="clsHELPER.vb" />
+    <Compile Include="ClsWeight.vb" />
+    <Compile Include="EnvioTrama.vb" />
+    <Compile Include="frmBusGeneral7.designer.vb">
+      <DependentUpon>frmBusGeneral7.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusGeneral7.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusGeneral8.Designer.vb">
+      <DependentUpon>frmBusGeneral8.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusGeneral8.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusqGeneral4.designer.vb">
+      <DependentUpon>frmBusqGeneral4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusqGeneral4.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBusqGeneral6.designer.vb">
+      <DependentUpon>frmBusqGeneral6.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBusqGeneral6.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ActualizaGuias.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_ActualizaGuias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ActualizaGuias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ActualizarPrecio.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_ActualizarPrecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ActualizarPrecio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_AgruparFacturas.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_AgruparFacturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_AgruparFacturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_AnularFactura.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_AnularFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_AnularFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_AsignarColgador.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_AsignarColgador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_AsignarColgador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_CopiaDatosFactura.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_CopiaDatosFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_CopiaDatosFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_DespachoExtemp.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_DespachoExtemp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_DespachoExtemp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_DetalleItem.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_DetalleItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_DetalleItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_DocumentosAsociados.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_DocumentosAsociados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_DocumentosAsociados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_EnvioFactElect.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_EnvioFactElect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_EnvioFactElect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_EventoComprometido.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_EventoComprometido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_EventoComprometido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_FechaCobranza.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_FechaCobranza.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_FechaCobranza.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_FechaEnvioDoc.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_FechaEnvioDoc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_FechaEnvioDoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMT.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_GenFacturasGuiasCMT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTAdd.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_GenFacturasGuiasCMTAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTMec.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_GenFacturasGuiasCMTMec.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTMec.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GuiaLocal.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_GuiaLocal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_GuiaLocal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ImpresionInvoice.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_ImpresionInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ImpresionInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ModificarPeso.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_ModificarPeso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ModificarPeso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_MuestraGuiaRemision.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_OtrosGastos.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_OtrosGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_OtrosGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_OtrosGastos_Mant.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_OtrosGastos_Mant.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_OtrosGastos_Mant.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_QYCFactura.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_QYCFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_QYCFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ReemplazarFactura.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_ReemplazarFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ReemplazarFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_Reimpresion.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_Reimpresion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_Reimpresion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_SeguimientoCobranza.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_SeguimientoCobranza.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_SeguimientoCobranza.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerCobros.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerCobros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerCobros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerDetalle.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerDetalle_Add.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerDetalle_Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerDetalle_Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerDetalle_RegPesos.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerDetalle_RegPesos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerDetalle_RegPesos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerPacking.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerPacking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_VerPacking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_Add.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_AddMantAnexosDireccion.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_AddMantAnexosDireccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_AddMantAnexosDireccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_AdicionarCuota.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_AdicionarCuota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_AdicionarCuota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_CompletarImpLDPDDP.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_CompletarImpLDPDDP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_CompletarImpLDPDDP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_CopiaDatosFactura.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_CopiaDatosFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_CopiaDatosFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_DatosDrawback.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_DatosDrawback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_DatosDrawback.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_DespachoExtemporaneo.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_DespachoExtemporaneo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_DespachoExtemporaneo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_DocumentosAsociados.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_DocumentosAsociados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_DocumentosAsociados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_FechaCobranzaRepro.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_FechaCobranzaRepro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_FechaCobranzaRepro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_FechaEnvioDocumento.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_FechaEnvioDocumento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_FechaEnvioDocumento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_ImporteFobDUA.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_ImporteFobDUA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_ImporteFobDUA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_Impresiones.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_Impresiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_Impresiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_ReactivaFactAnulada.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_ReactivaFactAnulada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_ReactivaFactAnulada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_Redondear.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_Redondear.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_Redondear.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerCobros.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerCobros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerCobros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalle.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAdd.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAddAsigNotas.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAddAsigNotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAddAsigNotas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAddItem.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAddItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAddItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAddItemMant.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAddItemMant.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAddItemMant.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAjusteImp.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAjusteImp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerDetalleAjusteImp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerStatusFact.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerStatusFact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerStatusFact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerVoucher.Designer.vb">
+      <DependentUpon>FrmDocumentoVenta_VerVoucher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVenta_VerVoucher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaestroUbigeo.designer.vb">
+      <DependentUpon>FrmMaestroUbigeo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMaestroUbigeo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMantenimientoAgenteAduana.designer.vb">
+      <DependentUpon>FrmMantenimientoAgenteAduana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMantenimientoAgenteAduana.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMantenimientoAgenteCarga.designer.vb">
+      <DependentUpon>FrmMantenimientoAgenteCarga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMantenimientoAgenteCarga.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMantenimientoEjecutivoCarga.designer.vb">
+      <DependentUpon>FrmMantenimientoEjecutivoCarga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMantenimientoEjecutivoCarga.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMantenimientoModoEmbarque.designer.vb">
+      <DependentUpon>FrmMantenimientoModoEmbarque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMantenimientoModoEmbarque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMantenimientoNaves.designer.vb">
+      <DependentUpon>FrmMantenimientoNaves.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMantenimientoNaves.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMantenimientoNavieras.designer.vb">
+      <DependentUpon>FrmMantenimientoNavieras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMantenimientoNavieras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowGuiasxFactPrendas_DatosAdicionales.designer.vb">
+      <DependentUpon>FrmShowGuiasxFactPrendas_DatosAdicionales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShowGuiasxFactPrendas_DatosAdicionales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque.designer.vb">
+      <DependentUpon>FrmTgEmbarque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Add.designer.vb">
+      <DependentUpon>FrmTgEmbarque_Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_AsignarFactura.designer.vb">
+      <DependentUpon>FrmTgEmbarque_AsignarFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_AsignarFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_CambiarInstruccionFactura.designer.vb">
+      <DependentUpon>FrmTgEmbarque_CambiarInstruccionFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_CambiarInstruccionFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DatosdeZarpe.designer.vb">
+      <DependentUpon>FrmTgEmbarque_DatosdeZarpe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DatosdeZarpe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle.designer.vb">
+      <DependentUpon>FrmTgEmbarque_Detalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DetalleProducto.designer.vb">
+      <DependentUpon>FrmTgEmbarque_DetalleProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DetalleProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DetalleProducto_LeerMovimiento.designer.vb">
+      <DependentUpon>FrmTgEmbarque_DetalleProducto_LeerMovimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DetalleProducto_LeerMovimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DetalleProducto_PackingList.designer.vb">
+      <DependentUpon>FrmTgEmbarque_DetalleProducto_PackingList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DetalleProducto_PackingList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DetalleProducto_PO.designer.vb">
+      <DependentUpon>FrmTgEmbarque_DetalleProducto_PO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_DetalleProducto_PO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_Add.designer.vb">
+      <DependentUpon>FrmTgEmbarque_Detalle_Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_Packing.designer.vb">
+      <DependentUpon>FrmTgEmbarque_Detalle_Packing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_Packing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_Telas.designer.vb">
+      <DependentUpon>FrmTgEmbarque_Detalle_Telas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_Telas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_Telas_EmbarqueTelas.designer.vb">
+      <DependentUpon>FrmTgEmbarque_Detalle_Telas_EmbarqueTelas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_Telas_EmbarqueTelas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_VerPacking.designer.vb">
+      <DependentUpon>FrmTgEmbarque_Detalle_VerPacking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Detalle_VerPacking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_EnvioInstruccionAGAduana.designer.vb">
+      <DependentUpon>FrmTgEmbarque_EnvioInstruccionAGAduana.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_EnvioInstruccionAGAduana.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_EnvioInstruccionAGCarga.designer.vb">
+      <DependentUpon>FrmTgEmbarque_EnvioInstruccionAGCarga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_EnvioInstruccionAGCarga.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_FacturaAnticipada.designer.vb">
+      <DependentUpon>FrmTgEmbarque_FacturaAnticipada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_FacturaAnticipada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_GastosAsociados.designer.vb">
+      <DependentUpon>FrmTgEmbarque_GastosAsociados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_GastosAsociados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_InstruccionEmbarque.designer.vb">
+      <DependentUpon>FrmTgEmbarque_InstruccionEmbarque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_InstruccionEmbarque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_ModificarFechas.designer.vb">
+      <DependentUpon>FrmTgEmbarque_ModificarFechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_ModificarFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Penalidades.designer.vb">
+      <DependentUpon>FrmTgEmbarque_Penalidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_Penalidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_RecepcionDUA.designer.vb">
+      <DependentUpon>FrmTgEmbarque_RecepcionDUA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_RecepcionDUA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_SolEmbarqueMercaderia.designer.vb">
+      <DependentUpon>FrmTgEmbarque_SolEmbarqueMercaderia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_SolEmbarqueMercaderia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_VistaPreliminar.designer.vb">
+      <DependentUpon>FrmTgEmbarque_VistaPreliminar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTgEmbarque_VistaPreliminar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModGeneral.vb" />
+    <Compile Include="ModRutinas.vb" />
+    <Compile Include="_FrmPrincipal.designer.vb">
+      <DependentUpon>_FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_FrmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModConexion.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="_IDE.Designer.vb">
+      <DependentUpon>_IDE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="_IDE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmBusGeneral7.resx">
+      <DependentUpon>frmBusGeneral7.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusGeneral8.resx">
+      <DependentUpon>frmBusGeneral8.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusqGeneral4.resX">
+      <DependentUpon>frmBusqGeneral4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBusqGeneral6.resX">
+      <DependentUpon>frmBusqGeneral6.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta.resx">
+      <DependentUpon>FrmDocumentoVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_ActualizaGuias.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_ActualizaGuias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_ActualizarPrecio.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_ActualizarPrecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_AgruparFacturas.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_AgruparFacturas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_AnularFactura.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_AnularFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_AsignarColgador.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_AsignarColgador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_CopiaDatosFactura.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_CopiaDatosFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_DespachoExtemp.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_DespachoExtemp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_DetalleItem.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_DetalleItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_DocumentosAsociados.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_DocumentosAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_EnvioFactElect.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_EnvioFactElect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_EventoComprometido.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_EventoComprometido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_FechaCobranza.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_FechaCobranza.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_FechaEnvioDoc.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_FechaEnvioDoc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMT.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_GenFacturasGuiasCMT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTAdd.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_GenFacturasGuiasCMTAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTMec.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_GenFacturasGuiasCMTMec.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_GuiaLocal.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_GuiaLocal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_ImpresionInvoice.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_ImpresionInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_ModificarPeso.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_ModificarPeso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_MuestraGuiaRemision.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_OtrosGastos.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_OtrosGastos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_OtrosGastos_Mant.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_OtrosGastos_Mant.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_QYCFactura.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_QYCFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_ReemplazarFactura.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_ReemplazarFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_Reimpresion.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_Reimpresion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_SeguimientoCobranza.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_SeguimientoCobranza.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_VerCobros.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerCobros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_VerDetalle.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_VerDetalle_Add.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerDetalle_Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_VerDetalle_RegPesos.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerDetalle_RegPesos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_VerPacking.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_VerPacking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_Add.resx">
+      <DependentUpon>FrmDocumentoVenta_Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_AddMantAnexosDireccion.resx">
+      <DependentUpon>FrmDocumentoVenta_AddMantAnexosDireccion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_AdicionarCuota.resx">
+      <DependentUpon>FrmDocumentoVenta_AdicionarCuota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_CompletarImpLDPDDP.resx">
+      <DependentUpon>FrmDocumentoVenta_CompletarImpLDPDDP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_CopiaDatosFactura.resx">
+      <DependentUpon>FrmDocumentoVenta_CopiaDatosFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_DatosDrawback.resx">
+      <DependentUpon>FrmDocumentoVenta_DatosDrawback.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_DespachoExtemporaneo.resx">
+      <DependentUpon>FrmDocumentoVenta_DespachoExtemporaneo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_DocumentosAsociados.resx">
+      <DependentUpon>FrmDocumentoVenta_DocumentosAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_FechaCobranzaRepro.resx">
+      <DependentUpon>FrmDocumentoVenta_FechaCobranzaRepro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_FechaEnvioDocumento.resx">
+      <DependentUpon>FrmDocumentoVenta_FechaEnvioDocumento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_ImporteFobDUA.resx">
+      <DependentUpon>FrmDocumentoVenta_ImporteFobDUA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_Impresiones.resx">
+      <DependentUpon>FrmDocumentoVenta_Impresiones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_ReactivaFactAnulada.resx">
+      <DependentUpon>FrmDocumentoVenta_ReactivaFactAnulada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_Redondear.resx">
+      <DependentUpon>FrmDocumentoVenta_Redondear.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerCobros.resx">
+      <DependentUpon>FrmDocumentoVenta_VerCobros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerDetalle.resx">
+      <DependentUpon>FrmDocumentoVenta_VerDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerDetalleAdd.resx">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerDetalleAddAsigNotas.resx">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAddAsigNotas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerDetalleAddItem.resx">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAddItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerDetalleAddItemMant.resx">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAddItemMant.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerDetalleAjusteImp.resx">
+      <DependentUpon>FrmDocumentoVenta_VerDetalleAjusteImp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerStatusFact.resx">
+      <DependentUpon>FrmDocumentoVenta_VerStatusFact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVenta_VerVoucher.resx">
+      <DependentUpon>FrmDocumentoVenta_VerVoucher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaestroUbigeo.resx">
+      <DependentUpon>FrmMaestroUbigeo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMantenimientoAgenteAduana.resx">
+      <DependentUpon>FrmMantenimientoAgenteAduana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMantenimientoAgenteCarga.resx">
+      <DependentUpon>FrmMantenimientoAgenteCarga.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMantenimientoEjecutivoCarga.resx">
+      <DependentUpon>FrmMantenimientoEjecutivoCarga.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMantenimientoModoEmbarque.resx">
+      <DependentUpon>FrmMantenimientoModoEmbarque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMantenimientoNaves.resx">
+      <DependentUpon>FrmMantenimientoNaves.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMantenimientoNavieras.resx">
+      <DependentUpon>FrmMantenimientoNavieras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowGuiasxFactPrendas_DatosAdicionales.resx">
+      <DependentUpon>FrmShowGuiasxFactPrendas_DatosAdicionales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque.resx">
+      <DependentUpon>FrmTgEmbarque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_Add.resx">
+      <DependentUpon>FrmTgEmbarque_Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_AsignarFactura.resx">
+      <DependentUpon>FrmTgEmbarque_AsignarFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_CambiarInstruccionFactura.resx">
+      <DependentUpon>FrmTgEmbarque_CambiarInstruccionFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_DatosdeZarpe.resx">
+      <DependentUpon>FrmTgEmbarque_DatosdeZarpe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_Detalle.resx">
+      <DependentUpon>FrmTgEmbarque_Detalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_DetalleProducto.resx">
+      <DependentUpon>FrmTgEmbarque_DetalleProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_DetalleProducto_LeerMovimiento.resx">
+      <DependentUpon>FrmTgEmbarque_DetalleProducto_LeerMovimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_DetalleProducto_PackingList.resx">
+      <DependentUpon>FrmTgEmbarque_DetalleProducto_PackingList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_DetalleProducto_PO.resx">
+      <DependentUpon>FrmTgEmbarque_DetalleProducto_PO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_Detalle_Add.resx">
+      <DependentUpon>FrmTgEmbarque_Detalle_Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_Detalle_Packing.resx">
+      <DependentUpon>FrmTgEmbarque_Detalle_Packing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_Detalle_Telas.resx">
+      <DependentUpon>FrmTgEmbarque_Detalle_Telas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_Detalle_Telas_EmbarqueTelas.resx">
+      <DependentUpon>FrmTgEmbarque_Detalle_Telas_EmbarqueTelas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_Detalle_VerPacking.resx">
+      <DependentUpon>FrmTgEmbarque_Detalle_VerPacking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_EnvioInstruccionAGAduana.resx">
+      <DependentUpon>FrmTgEmbarque_EnvioInstruccionAGAduana.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_EnvioInstruccionAGCarga.resx">
+      <DependentUpon>FrmTgEmbarque_EnvioInstruccionAGCarga.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_FacturaAnticipada.resx">
+      <DependentUpon>FrmTgEmbarque_FacturaAnticipada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_GastosAsociados.resx">
+      <DependentUpon>FrmTgEmbarque_GastosAsociados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_InstruccionEmbarque.resx">
+      <DependentUpon>FrmTgEmbarque_InstruccionEmbarque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_ModificarFechas.resx">
+      <DependentUpon>FrmTgEmbarque_ModificarFechas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_Penalidades.resx">
+      <DependentUpon>FrmTgEmbarque_Penalidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_RecepcionDUA.resx">
+      <DependentUpon>FrmTgEmbarque_RecepcionDUA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_SolEmbarqueMercaderia.resx">
+      <DependentUpon>FrmTgEmbarque_SolEmbarqueMercaderia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTgEmbarque_VistaPreliminar.resx">
+      <DependentUpon>FrmTgEmbarque_VistaPreliminar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="_FrmPrincipal.resX">
+      <DependentUpon>_FrmPrincipal.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_IDE.resx">
+      <DependentUpon>_IDE.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_search_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_critical_zones_warning_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_16X16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search01_16X16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept_16X16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_table_header_edit_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_excel_down_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_02_128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_01_128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_attribute_find_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_excel_down_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_update_refresh_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_table_header_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_16X16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magic-wand-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AGREGAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AGREGAR_TODO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUITAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUITAR_TODO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16x162.png" />
+    <None Include="Resources\ic_warehouse_up_48x48.png" />
+    <None Include="Resources\document_512x512.png" />
+    <Content Include="SIGEApp_93x128.ico" />
+    <None Include="Resources\ic_word_count_edit.png" />
+    <None Include="Resources\ic_field_date_edit_48x48.png" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\AGREGAR_TODO3.png" />
+    <Content Include="Resources\CirculoAmarillo.png" />
+    <Content Include="Resources\CirculoRojo.png" />
+    <Content Include="Resources\CirculoVerde.png" />
+    <Content Include="Resources\Flag1-green_24x241.png" />
+    <Content Include="Resources\Flag1-orange_24x24.png" />
+    <Content Include="Resources\Flag1-red_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Ge_Ventas
+</name>
+</assembly>
+<members>
+<member name="T:Ge_Ventas.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.accept_16X16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.AGREGAR">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.AGREGAR_TODO">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.AGREGAR_TODO1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.cancel_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.CirculoAmarillo">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.CirculoRojo">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.CirculoVerde">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.delete_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.document_512x512">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.edit_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_attribute_find_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_critical_zones_warning_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_excel_down_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_excel_down_48x48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_field_date_edit_48x48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_search_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_table_header_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_table_header_edit_48x48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_update_refresh_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_warehouse_up_48x48">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.ic_word_count_edit">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.info_16X16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.Magic_wand_icon">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.new_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.QUITAR">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.QUITAR_TODO">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.save_16x16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.search_01_128x128">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.search_02_128x128">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.search_16X16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Ge_Ventas.My.Resources.Resources.search01_16X16">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:Ge_Ventas.ModGeneral.CheckLayoutGridEx(Janus.Windows.GridEX.GridEX@)">
+ <summary>
+ Verificar Columnas de un DataSource para una grilla Janus
+ </summary>
+ <param name="poGrid"></param>
+ <remarks></remarks>
+</member>
+<member name="M:Ge_Ventas.ModGeneral.ObtenerDr_DeGridEx(Janus.Windows.GridEX.GridEX)">
+ <summary>
+ Obtener DataRow de GridEx
+ </summary>
+ <param name="xGridEx"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

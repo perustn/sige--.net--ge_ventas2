@@ -149,6 +149,8 @@ Public Class clsForm
                 GetForm = New FrmDocumentoVenta
             Case "FRMDOCUMENTOVENTAEXPORTACION"
                 GetForm = New FrmDocumentoVentaExportacion
+            Case "FRMTGEMBARQUE"
+                GetForm = New FrmTgEmbarque
         End Select
         Return GetForm
     End Function

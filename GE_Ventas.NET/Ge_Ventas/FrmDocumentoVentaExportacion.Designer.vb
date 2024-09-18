@@ -163,7 +163,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.PanelGuia.Controls.Add(Me.Panel1)
         Me.PanelGuia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelGuia.Location = New System.Drawing.Point(0, 0)
-        Me.PanelGuia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelGuia.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelGuia.Name = "PanelGuia"
         Me.PanelGuia.Size = New System.Drawing.Size(1589, 860)
         Me.PanelGuia.TabIndex = 0
@@ -181,7 +181,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.GrdLista.FilterRowUpdateMode = Janus.Windows.GridEX.FilterRowUpdateMode.WhenValueChanges
         Me.GrdLista.GroupByBoxVisible = False
         Me.GrdLista.Location = New System.Drawing.Point(272, 33)
-        Me.GrdLista.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GrdLista.Margin = New System.Windows.Forms.Padding(4)
         Me.GrdLista.Name = "GrdLista"
         Me.GrdLista.OfficeColorScheme = Janus.Windows.GridEX.OfficeColorScheme.Blue
         Me.GrdLista.RecordNavigator = True
@@ -235,7 +235,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.ButtonBar3.ItemAppearance = Janus.Windows.ButtonBar.ItemAppearance.Flat
         Me.ButtonBar3.LargeImageSize = New System.Drawing.Size(25, 25)
         Me.ButtonBar3.Location = New System.Drawing.Point(272, 779)
-        Me.ButtonBar3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonBar3.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonBar3.Name = "ButtonBar3"
         Me.ButtonBar3.OfficeColorScheme = Janus.Windows.ButtonBar.OfficeColorScheme.Blue
         Me.ButtonBar3.Orientation = Janus.Windows.ButtonBar.ButtonBarOrientation.Horizontal
@@ -252,7 +252,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.UiTab1.Dock = System.Windows.Forms.DockStyle.Right
         Me.UiTab1.FirstTabOffset = 3
         Me.UiTab1.Location = New System.Drawing.Point(1378, 33)
-        Me.UiTab1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.UiTab1.Margin = New System.Windows.Forms.Padding(4)
         Me.UiTab1.Name = "UiTab1"
         Me.UiTab1.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue
         Me.UiTab1.Size = New System.Drawing.Size(211, 827)
@@ -264,7 +264,7 @@ Partial Class FrmDocumentoVentaExportacion
         '
         Me.UiTabPage1.Controls.Add(Me.ButtonBar1)
         Me.UiTabPage1.Location = New System.Drawing.Point(1, 25)
-        Me.UiTabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.UiTabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.UiTabPage1.Name = "UiTabPage1"
         Me.UiTabPage1.Size = New System.Drawing.Size(209, 801)
         Me.UiTabPage1.TabStop = True
@@ -321,7 +321,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.ButtonBar1.ItemAppearance = Janus.Windows.ButtonBar.ItemAppearance.Flat
         Me.ButtonBar1.LargeImageSize = New System.Drawing.Size(25, 25)
         Me.ButtonBar1.Location = New System.Drawing.Point(0, 0)
-        Me.ButtonBar1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonBar1.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonBar1.Name = "ButtonBar1"
         Me.ButtonBar1.OfficeColorScheme = Janus.Windows.ButtonBar.OfficeColorScheme.Blue
         Me.ButtonBar1.SelectionArea = Janus.Windows.ButtonBar.SelectionArea.FullItem
@@ -335,10 +335,10 @@ Partial Class FrmDocumentoVentaExportacion
         'UiTabPage2
         '
         Me.UiTabPage2.Controls.Add(Me.ButtonBar2)
-        Me.UiTabPage2.Location = New System.Drawing.Point(1, 26)
-        Me.UiTabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.UiTabPage2.Location = New System.Drawing.Point(1, 25)
+        Me.UiTabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(208, 800)
+        Me.UiTabPage2.Size = New System.Drawing.Size(209, 801)
         Me.UiTabPage2.TabStop = True
         Me.UiTabPage2.Text = "OPT 2"
         '
@@ -402,12 +402,12 @@ Partial Class FrmDocumentoVentaExportacion
         Me.ButtonBar2.ItemAppearance = Janus.Windows.ButtonBar.ItemAppearance.Flat
         Me.ButtonBar2.LargeImageSize = New System.Drawing.Size(25, 25)
         Me.ButtonBar2.Location = New System.Drawing.Point(0, 0)
-        Me.ButtonBar2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ButtonBar2.Margin = New System.Windows.Forms.Padding(4)
         Me.ButtonBar2.Name = "ButtonBar2"
         Me.ButtonBar2.OfficeColorScheme = Janus.Windows.ButtonBar.OfficeColorScheme.Blue
         Me.ButtonBar2.SelectionArea = Janus.Windows.ButtonBar.SelectionArea.FullItem
         Me.ButtonBar2.ShadowOnHover = True
-        Me.ButtonBar2.Size = New System.Drawing.Size(208, 800)
+        Me.ButtonBar2.Size = New System.Drawing.Size(209, 801)
         Me.ButtonBar2.SmallImageSize = New System.Drawing.Size(25, 25)
         Me.ButtonBar2.TabIndex = 129
         Me.ButtonBar2.Text = "Opciones"
@@ -419,7 +419,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(272, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1317, 33)
         Me.Panel2.TabIndex = 125
@@ -430,7 +430,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.Panel4.Controls.Add(Me.rbtExpandir)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel4.Location = New System.Drawing.Point(934, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(383, 33)
         Me.Panel4.TabIndex = 35
@@ -442,7 +442,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.rbtContraer.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbtContraer.ForeColor = System.Drawing.Color.Black
         Me.rbtContraer.Location = New System.Drawing.Point(8, 5)
-        Me.rbtContraer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtContraer.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtContraer.Name = "rbtContraer"
         Me.rbtContraer.Size = New System.Drawing.Size(162, 22)
         Me.rbtContraer.TabIndex = 89
@@ -456,7 +456,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.rbtExpandir.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbtExpandir.ForeColor = System.Drawing.Color.Black
         Me.rbtExpandir.Location = New System.Drawing.Point(191, 5)
-        Me.rbtExpandir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rbtExpandir.Margin = New System.Windows.Forms.Padding(4)
         Me.rbtExpandir.Name = "rbtExpandir"
         Me.rbtExpandir.Size = New System.Drawing.Size(161, 22)
         Me.rbtExpandir.TabIndex = 90
@@ -484,7 +484,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.Panel1.Controls.Add(Me.OptFecha)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(272, 860)
         Me.Panel1.TabIndex = 1
@@ -495,7 +495,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.BtnImprimir.Image = Global.Ge_Ventas.My.Resources.Resources.ic_excel_down_48x48
         Me.BtnImprimir.ImageKey = "48px-Crystal_Clear_action_apply.png"
         Me.BtnImprimir.Location = New System.Drawing.Point(15, 672)
-        Me.BtnImprimir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnImprimir.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnImprimir.Name = "BtnImprimir"
         Me.BtnImprimir.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue
         Me.BtnImprimir.Size = New System.Drawing.Size(243, 36)
@@ -513,7 +513,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.grbClienteComercial.Controls.Add(Me.Label13)
         Me.grbClienteComercial.ForeColor = System.Drawing.Color.White
         Me.grbClienteComercial.Location = New System.Drawing.Point(5, 421)
-        Me.grbClienteComercial.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grbClienteComercial.Margin = New System.Windows.Forms.Padding(4)
         Me.grbClienteComercial.Name = "grbClienteComercial"
         Me.grbClienteComercial.Size = New System.Drawing.Size(261, 178)
         Me.grbClienteComercial.TabIndex = 157
@@ -525,7 +525,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.Chk_PO.AutoSize = True
         Me.Chk_PO.ForeColor = System.Drawing.Color.Blue
         Me.Chk_PO.Location = New System.Drawing.Point(4, 95)
-        Me.Chk_PO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Chk_PO.Margin = New System.Windows.Forms.Padding(4)
         Me.Chk_PO.Name = "Chk_PO"
         Me.Chk_PO.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue
         Me.Chk_PO.Size = New System.Drawing.Size(41, 19)
@@ -539,7 +539,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.fraPO.Controls.Add(Me.Label6)
         Me.fraPO.ForeColor = System.Drawing.Color.White
         Me.fraPO.Location = New System.Drawing.Point(11, 107)
-        Me.fraPO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.fraPO.Margin = New System.Windows.Forms.Padding(4)
         Me.fraPO.Name = "fraPO"
         Me.fraPO.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue
         Me.fraPO.Size = New System.Drawing.Size(243, 66)
@@ -553,7 +553,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.Txt_PO.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Txt_PO.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Txt_PO.Location = New System.Drawing.Point(13, 38)
-        Me.Txt_PO.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_PO.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_PO.MaxLength = 0
         Me.Txt_PO.Name = "Txt_PO"
         Me.Txt_PO.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -582,7 +582,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtNom_Cliente.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtNom_Cliente.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtNom_Cliente.Location = New System.Drawing.Point(7, 66)
-        Me.txtNom_Cliente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNom_Cliente.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNom_Cliente.MaxLength = 0
         Me.txtNom_Cliente.Name = "txtNom_Cliente"
         Me.txtNom_Cliente.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -596,7 +596,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtAbr_Cliente.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtAbr_Cliente.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtAbr_Cliente.Location = New System.Drawing.Point(7, 39)
-        Me.txtAbr_Cliente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAbr_Cliente.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAbr_Cliente.MaxLength = 0
         Me.txtAbr_Cliente.Name = "txtAbr_Cliente"
         Me.txtAbr_Cliente.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -626,7 +626,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.grbFechaEmision.Controls.Add(Me.Label12)
         Me.grbFechaEmision.ForeColor = System.Drawing.Color.White
         Me.grbFechaEmision.Location = New System.Drawing.Point(5, 421)
-        Me.grbFechaEmision.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grbFechaEmision.Margin = New System.Windows.Forms.Padding(4)
         Me.grbFechaEmision.Name = "grbFechaEmision"
         Me.grbFechaEmision.Size = New System.Drawing.Size(261, 130)
         Me.grbFechaEmision.TabIndex = 156
@@ -638,7 +638,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.dtpFecEmiFin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dtpFecEmiFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFecEmiFin.Location = New System.Drawing.Point(7, 94)
-        Me.dtpFecEmiFin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpFecEmiFin.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpFecEmiFin.Name = "dtpFecEmiFin"
         Me.dtpFecEmiFin.Size = New System.Drawing.Size(125, 23)
         Me.dtpFecEmiFin.TabIndex = 66
@@ -648,7 +648,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.dtpFecEmiIni.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dtpFecEmiIni.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFecEmiIni.Location = New System.Drawing.Point(7, 39)
-        Me.dtpFecEmiIni.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtpFecEmiIni.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpFecEmiIni.Name = "dtpFecEmiIni"
         Me.dtpFecEmiIni.Size = New System.Drawing.Size(125, 23)
         Me.dtpFecEmiIni.TabIndex = 64
@@ -693,7 +693,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.grbConsignatario.Controls.Add(Me.Label11)
         Me.grbConsignatario.ForeColor = System.Drawing.Color.White
         Me.grbConsignatario.Location = New System.Drawing.Point(5, 421)
-        Me.grbConsignatario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grbConsignatario.Margin = New System.Windows.Forms.Padding(4)
         Me.grbConsignatario.Name = "grbConsignatario"
         Me.grbConsignatario.Size = New System.Drawing.Size(261, 169)
         Me.grbConsignatario.TabIndex = 155
@@ -708,7 +708,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtDes_TipAnxo.Enabled = False
         Me.txtDes_TipAnxo.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtDes_TipAnxo.Location = New System.Drawing.Point(55, 126)
-        Me.txtDes_TipAnxo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDes_TipAnxo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDes_TipAnxo.MaxLength = 0
         Me.txtDes_TipAnxo.Name = "txtDes_TipAnxo"
         Me.txtDes_TipAnxo.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -724,7 +724,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtCod_TipAnxo.Enabled = False
         Me.txtCod_TipAnxo.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtCod_TipAnxo.Location = New System.Drawing.Point(7, 126)
-        Me.txtCod_TipAnxo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCod_TipAnxo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCod_TipAnxo.MaxLength = 0
         Me.txtCod_TipAnxo.Name = "txtCod_TipAnxo"
         Me.txtCod_TipAnxo.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -739,7 +739,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtDes_Anexo.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtDes_Anexo.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtDes_Anexo.Location = New System.Drawing.Point(7, 68)
-        Me.txtDes_Anexo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDes_Anexo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDes_Anexo.MaxLength = 0
         Me.txtDes_Anexo.Name = "txtDes_Anexo"
         Me.txtDes_Anexo.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -753,7 +753,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtNum_Ruc.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtNum_Ruc.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtNum_Ruc.Location = New System.Drawing.Point(7, 39)
-        Me.txtNum_Ruc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNum_Ruc.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNum_Ruc.MaxLength = 0
         Me.txtNum_Ruc.Name = "txtNum_Ruc"
         Me.txtNum_Ruc.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -797,7 +797,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.grbAnioMes.Controls.Add(Me.Label8)
         Me.grbAnioMes.ForeColor = System.Drawing.Color.White
         Me.grbAnioMes.Location = New System.Drawing.Point(5, 421)
-        Me.grbAnioMes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grbAnioMes.Margin = New System.Windows.Forms.Padding(4)
         Me.grbAnioMes.Name = "grbAnioMes"
         Me.grbAnioMes.Size = New System.Drawing.Size(261, 74)
         Me.grbAnioMes.TabIndex = 153
@@ -811,7 +811,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtAno.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtAno.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtAno.Location = New System.Drawing.Point(7, 39)
-        Me.txtAno.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAno.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAno.MaxLength = 4
         Me.txtAno.Name = "txtAno"
         Me.txtAno.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -825,7 +825,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtMes.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtMes.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtMes.Location = New System.Drawing.Point(93, 39)
-        Me.txtMes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtMes.Margin = New System.Windows.Forms.Padding(4)
         Me.txtMes.MaxLength = 2
         Me.txtMes.Name = "txtMes"
         Me.txtMes.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -853,7 +853,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.grbCorrelativo.Controls.Add(Me.Label7)
         Me.grbCorrelativo.ForeColor = System.Drawing.Color.White
         Me.grbCorrelativo.Location = New System.Drawing.Point(5, 421)
-        Me.grbCorrelativo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grbCorrelativo.Margin = New System.Windows.Forms.Padding(4)
         Me.grbCorrelativo.Name = "grbCorrelativo"
         Me.grbCorrelativo.Size = New System.Drawing.Size(261, 74)
         Me.grbCorrelativo.TabIndex = 152
@@ -867,7 +867,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtNum_Corre.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtNum_Corre.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtNum_Corre.Location = New System.Drawing.Point(7, 39)
-        Me.txtNum_Corre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNum_Corre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNum_Corre.MaxLength = 0
         Me.txtNum_Corre.Name = "txtNum_Corre"
         Me.txtNum_Corre.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -894,7 +894,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.BtnBuscar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBuscar.ImageKey = "48px-Crystal_Clear_action_apply.png"
         Me.BtnBuscar.Location = New System.Drawing.Point(15, 629)
-        Me.BtnBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue
         Me.BtnBuscar.Size = New System.Drawing.Size(243, 36)
@@ -907,7 +907,7 @@ Partial Class FrmDocumentoVentaExportacion
         '
         Me.PictureBox1.Image = Global.Ge_Ventas.My.Resources.Resources.search_02_128x128
         Me.PictureBox1.Location = New System.Drawing.Point(9, 33)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(245, 186)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -924,7 +924,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.grbNroDocumento.Controls.Add(Me.Label2)
         Me.grbNroDocumento.Controls.Add(Me.Label3)
         Me.grbNroDocumento.Location = New System.Drawing.Point(5, 421)
-        Me.grbNroDocumento.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.grbNroDocumento.Margin = New System.Windows.Forms.Padding(4)
         Me.grbNroDocumento.Name = "grbNroDocumento"
         Me.grbNroDocumento.OfficeColorScheme = Janus.Windows.UI.OfficeColorScheme.Blue
         Me.grbNroDocumento.Size = New System.Drawing.Size(261, 129)
@@ -938,7 +938,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtSer_Docum.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtSer_Docum.ForeColor = System.Drawing.Color.Black
         Me.txtSer_Docum.Location = New System.Drawing.Point(8, 98)
-        Me.txtSer_Docum.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSer_Docum.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSer_Docum.MaxLength = 0
         Me.txtSer_Docum.Name = "txtSer_Docum"
         Me.txtSer_Docum.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -952,7 +952,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtNum_Docum.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtNum_Docum.ForeColor = System.Drawing.Color.Black
         Me.txtNum_Docum.Location = New System.Drawing.Point(81, 98)
-        Me.txtNum_Docum.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNum_Docum.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNum_Docum.MaxLength = 0
         Me.txtNum_Docum.Name = "txtNum_Docum"
         Me.txtNum_Docum.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -966,7 +966,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtDes_TipDoc.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtDes_TipDoc.ForeColor = System.Drawing.Color.Black
         Me.txtDes_TipDoc.Location = New System.Drawing.Point(60, 39)
-        Me.txtDes_TipDoc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDes_TipDoc.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDes_TipDoc.MaxLength = 0
         Me.txtDes_TipDoc.Name = "txtDes_TipDoc"
         Me.txtDes_TipDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -980,7 +980,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.txtCod_TipDoc.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtCod_TipDoc.ForeColor = System.Drawing.Color.Black
         Me.txtCod_TipDoc.Location = New System.Drawing.Point(8, 39)
-        Me.txtCod_TipDoc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCod_TipDoc.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCod_TipDoc.MaxLength = 0
         Me.txtCod_TipDoc.Name = "txtCod_TipDoc"
         Me.txtCod_TipDoc.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -1033,7 +1033,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.OptClienteComercial.Image = CType(resources.GetObject("OptClienteComercial.Image"), System.Drawing.Image)
         Me.OptClienteComercial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.OptClienteComercial.Location = New System.Drawing.Point(7, 383)
-        Me.OptClienteComercial.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OptClienteComercial.Margin = New System.Windows.Forms.Padding(4)
         Me.OptClienteComercial.Name = "OptClienteComercial"
         Me.OptClienteComercial.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.OptClienteComercial.Size = New System.Drawing.Size(207, 24)
@@ -1052,7 +1052,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.OptNroDocumento.Image = CType(resources.GetObject("OptNroDocumento.Image"), System.Drawing.Image)
         Me.OptNroDocumento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.OptNroDocumento.Location = New System.Drawing.Point(7, 326)
-        Me.OptNroDocumento.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OptNroDocumento.Margin = New System.Windows.Forms.Padding(4)
         Me.OptNroDocumento.Name = "OptNroDocumento"
         Me.OptNroDocumento.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.OptNroDocumento.Size = New System.Drawing.Size(199, 24)
@@ -1071,7 +1071,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.OptAnioMes.Image = CType(resources.GetObject("OptAnioMes.Image"), System.Drawing.Image)
         Me.OptAnioMes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.OptAnioMes.Location = New System.Drawing.Point(7, 298)
-        Me.OptAnioMes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OptAnioMes.Margin = New System.Windows.Forms.Padding(4)
         Me.OptAnioMes.Name = "OptAnioMes"
         Me.OptAnioMes.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.OptAnioMes.Size = New System.Drawing.Size(159, 24)
@@ -1090,7 +1090,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.OptCorrelativo.Image = CType(resources.GetObject("OptCorrelativo.Image"), System.Drawing.Image)
         Me.OptCorrelativo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.OptCorrelativo.Location = New System.Drawing.Point(7, 354)
-        Me.OptCorrelativo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OptCorrelativo.Margin = New System.Windows.Forms.Padding(4)
         Me.OptCorrelativo.Name = "OptCorrelativo"
         Me.OptCorrelativo.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.OptCorrelativo.Size = New System.Drawing.Size(229, 24)
@@ -1109,7 +1109,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.OptConsignatario.Image = CType(resources.GetObject("OptConsignatario.Image"), System.Drawing.Image)
         Me.OptConsignatario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.OptConsignatario.Location = New System.Drawing.Point(7, 270)
-        Me.OptConsignatario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OptConsignatario.Margin = New System.Windows.Forms.Padding(4)
         Me.OptConsignatario.Name = "OptConsignatario"
         Me.OptConsignatario.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.OptConsignatario.Size = New System.Drawing.Size(183, 24)
@@ -1129,7 +1129,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.OptFecha.Image = CType(resources.GetObject("OptFecha.Image"), System.Drawing.Image)
         Me.OptFecha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.OptFecha.Location = New System.Drawing.Point(7, 241)
-        Me.OptFecha.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.OptFecha.Margin = New System.Windows.Forms.Padding(4)
         Me.OptFecha.Name = "OptFecha"
         Me.OptFecha.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.OptFecha.Size = New System.Drawing.Size(206, 24)
@@ -1145,7 +1145,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1589, 860)
         Me.Controls.Add(Me.PanelGuia)
-        Me.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Margin = New System.Windows.Forms.Padding(5)
         Me.Name = "FrmDocumentoVentaExportacion"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

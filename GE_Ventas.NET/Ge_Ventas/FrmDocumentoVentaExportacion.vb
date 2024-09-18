@@ -1,6 +1,10 @@
 ﻿Imports Janus.Windows.GridEX
 Imports Microsoft.Office.Interop
 Imports System.Data.SqlClient
+Imports System.Net
+Imports RestSharp
+Imports Newtonsoft.Json
+Imports System.Text.Encoding
 
 Public Class FrmDocumentoVentaExportacion
     Private strSQL As String = String.Empty
@@ -857,6 +861,10 @@ Public Class FrmDocumentoVentaExportacion
 
                 Case "ENVDOCEFACT"
                     If GrdLista.RowCount = 0 Then Exit Sub
+
+                    'ConsumirAPIGet(GrdLista.GetValue(GrdLista.RootTable.Columns("Num_Corre").Index))
+                    'Exit Sub
+
                     If GrdLista.GetValue(GrdLista.RootTable.Columns("flg_enviado_FE").Index) = "S" Then
                         MessageBox.Show("Documento ya fue enviado a F.E., verifique!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                         Exit Sub
@@ -1012,6 +1020,162 @@ Public Class FrmDocumentoVentaExportacion
             MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
     End Sub
+
+    Sub ConsumirAPIGet(v_Num_Corre As String)
+        Try
+
+            ServicePointManager.Expect100Continue = True
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+
+            Dim client = New RestClient
+            client.BaseUrl = New Uri("http://localhost:7143/externo/token/SOUTHERNTN")
+            'client.BaseUrl = New Uri("http://192.168.30.23:6790/externo/token/SOUTHERNTN")
+
+            Dim request = New RestRequest
+            request.Method = Method.GET
+
+            request.AddHeader("token", "fetch")
+
+            Dim response = client.Execute(request).Content
+            Dim xtoken = client.Execute(request).Headers(1).Value.ToString
+
+            Dim jObject = JsonConvert.DeserializeObject(Of Respuesta)(response)
+
+            If jObject.ok = False Then
+                MessageBox.Show(jObject.erro.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                Exit Sub
+
+            ElseIf jObject.ok = True Then
+                ConsumoApiPost(xtoken, v_Num_Corre)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+    End Sub
+
+    Sub ConsumoApiPost(token As String, x_v_Num_Corre As String)
+        Try
+
+            Dim Dt_DetFact As New DataTable
+            Dim vl_cant As Integer
+            strSQL = String.Format("Exec Sp_Det_Fact_Exportacion_Api_integracion '{0}'", x_v_Num_Corre)
+            Dt_DetFact = oHP.DevuelveDatos(strSQL, cCONNECT)
+
+            If Dt_DetFact.Rows.Count > 0 Then
+                Dim o_Factura As New factura
+                Dim o_Item As New item
+                vl_cant = Dt_DetFact.Rows.Count
+
+                o_Factura.serie = Dt_DetFact.Rows(0)("serie")
+                o_Factura.numero = Dt_DetFact.Rows(0)("numero")
+                o_Factura.fecha = Dt_DetFact.Rows(0)("fecha")
+                o_Factura.po = Dt_DetFact.Rows(0)("po_cab")
+                o_Factura.clientecodigo = Dt_DetFact.Rows(0)("clientecodigo")
+                o_Factura.clientenombre = Dt_DetFact.Rows(0)("clientenombre")
+                o_Factura.montosubtotal = Dt_DetFact.Rows(0)("montosubtotal")
+                o_Factura.montoigv = Dt_DetFact.Rows(0)("montoigv")
+                o_Factura.montototal = Dt_DetFact.Rows(0)("montototal")
+                o_Factura.programacodigo = Dt_DetFact.Rows(0)("programacodigo")
+                o_Factura.programanombre = Dt_DetFact.Rows(0)("programanombre")
+                o_Factura.divisioncodigo = Dt_DetFact.Rows(0)("divisioncodigo")
+                o_Factura.divisionnombre = Dt_DetFact.Rows(0)("divisionnombre")
+                o_Factura.enviotipocodigo = Dt_DetFact.Rows(0)("enviotipocodigo")
+                o_Factura.enviotiponombre = Dt_DetFact.Rows(0)("enviotiponombre")
+                o_Factura.temporada = Dt_DetFact.Rows(0)("temporada")
+                o_Factura.prendas = Dt_DetFact.Rows(0)("prendas")
+
+                Dim items(vl_cant - 1) As item 'ARRAY DE ITEMS
+
+                For i As Integer = 0 To Dt_DetFact.Rows.Count - 1
+                    items(i) = New item()
+                    items(i).numero = Dt_DetFact.Rows(i)("item")
+                    items(i).po = Dt_DetFact.Rows(i)("po_det")
+                    items(i).estilocodigo = Dt_DetFact.Rows(i)("estilocodigo")
+                    items(i).estilonombre = Dt_DetFact.Rows(i)("estilonombre")
+                    items(i).colorcodigo = Dt_DetFact.Rows(i)("colorcodigo")
+                    items(i).colornombre = Dt_DetFact.Rows(i)("colornombre")
+                    items(i).cantidad = Dt_DetFact.Rows(i)("cantidad")
+                    items(i).precio = Dt_DetFact.Rows(i)("precio")
+                Next
+
+                o_Factura.items = items
+
+                ServicePointManager.Expect100Continue = True
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+
+                Dim client = New RestClient
+                client.BaseUrl = New Uri("http://localhost:7143/externo/facturacion/SOUTHERNTN")
+
+                Dim request = New RestRequest
+                request.Method = Method.POST
+
+                request.AddHeader("token", token)
+
+                Dim json_envio = JsonConvert.SerializeObject(o_Factura)
+
+                request.AddJsonBody(o_Factura)
+
+                Dim response = client.Execute(request).Content
+
+                Dim jObject = JsonConvert.DeserializeObject(Of Respuesta)(response)
+
+                If jObject.ok = False Then
+                    MessageBox.Show(jObject.erro.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    Exit Sub
+
+                ElseIf jObject.ok = True Then
+                    'ConsumoApiPost(xtoken, v_Num_Corre)
+                End If
+
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+    End Sub
+
+    Class Respuesta
+        Public Property ok As String
+        Public Property data As String
+        Public Property erro As String
+
+    End Class
+
+    Public Class factura
+        Public Property serie As String
+        Public Property numero As String
+        Public Property fecha As String
+        Public Property po As String
+        Public Property clientecodigo As String
+        Public Property clientenombre As String
+        Public Property montosubtotal As Decimal
+        Public Property montoigv As Decimal
+        Public Property montototal As Decimal
+        Public Property programacodigo As String
+        Public Property programanombre As String
+        Public Property divisioncodigo As String
+        Public Property divisionnombre As String
+        Public Property enviotipocodigo As String
+        Public Property enviotiponombre As String
+        Public Property temporada As String
+        Public Property prendas As Integer
+        Public Property items() As item()
+
+    End Class
+
+    Public Class item
+        Public Property numero As Integer
+        Public Property po As String
+        Public Property estilocodigo As String
+        Public Property estilonombre As String
+        Public Property colorcodigo As String
+        Public Property colornombre As String
+        Public Property cantidad As Decimal
+        Public Property precio As Decimal
+
+    End Class
 
     Private Sub Imprimir_DeclaJuradaF2(ByVal sNum_Corre As String)
         Dim oo As Object

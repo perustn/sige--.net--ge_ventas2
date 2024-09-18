@@ -862,8 +862,8 @@ Public Class FrmDocumentoVentaExportacion
                 Case "ENVDOCEFACT"
                     If GrdLista.RowCount = 0 Then Exit Sub
 
-                    'ConsumirAPIGet(GrdLista.GetValue(GrdLista.RootTable.Columns("Num_Corre").Index))
-                    'Exit Sub
+                    ConsumirAPIGet(GrdLista.GetValue(GrdLista.RootTable.Columns("Num_Corre").Index))
+                    Exit Sub
 
                     If GrdLista.GetValue(GrdLista.RootTable.Columns("flg_enviado_FE").Index) = "S" Then
                         MessageBox.Show("Documento ya fue enviado a F.E., verifique!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -1042,7 +1042,7 @@ Public Class FrmDocumentoVentaExportacion
             Dim jObject = JsonConvert.DeserializeObject(Of Respuesta)(response)
 
             If jObject.ok = False Then
-                MessageBox.Show(jObject.erro.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                MessageBox.Show(jObject.error.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
 
             ElseIf jObject.ok = True Then
@@ -1121,11 +1121,11 @@ Public Class FrmDocumentoVentaExportacion
                 Dim jObject = JsonConvert.DeserializeObject(Of Respuesta)(response)
 
                 If jObject.ok = False Then
-                    MessageBox.Show(jObject.erro.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                    MessageBox.Show("Error conexión API." & vbCrLf & "Descripción error: " & jObject.error.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     Exit Sub
 
                 ElseIf jObject.ok = True Then
-                    'ConsumoApiPost(xtoken, v_Num_Corre)
+                    MessageBox.Show("Documento procesado." & vbCrLf & "Referencia: " & jObject.data.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
 
             End If
@@ -1139,7 +1139,7 @@ Public Class FrmDocumentoVentaExportacion
     Class Respuesta
         Public Property ok As String
         Public Property data As String
-        Public Property erro As String
+        Public Property [error] As String
 
     End Class
 

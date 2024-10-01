@@ -1028,8 +1028,8 @@ Public Class FrmDocumentoVentaExportacion
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
 
             Dim client = New RestClient
-            client.BaseUrl = New Uri("http://localhost:7143/externo/token/SOUTHERNTN")
-            'client.BaseUrl = New Uri("http://192.168.30.23:6790/externo/token/SOUTHERNTN")
+            'client.BaseUrl = New Uri("http://localhost:7143/externo/token/SOUTHERNTN")
+            client.BaseUrl = New Uri("http://192.168.30.23:6790/externo/token/SOUTHERNTN")
 
             Dim request = New RestRequest
             request.Method = Method.GET
@@ -1070,19 +1070,19 @@ Public Class FrmDocumentoVentaExportacion
                 o_Factura.serie = Dt_DetFact.Rows(0)("serie")
                 o_Factura.numero = Dt_DetFact.Rows(0)("numero")
                 o_Factura.fecha = Dt_DetFact.Rows(0)("fecha")
-                o_Factura.po = Dt_DetFact.Rows(0)("po_cab")
+                'o_Factura.po = Dt_DetFact.Rows(0)("po_cab")
                 o_Factura.clientecodigo = Dt_DetFact.Rows(0)("clientecodigo")
                 o_Factura.clientenombre = Dt_DetFact.Rows(0)("clientenombre")
                 o_Factura.montosubtotal = Dt_DetFact.Rows(0)("montosubtotal")
                 o_Factura.montoigv = Dt_DetFact.Rows(0)("montoigv")
                 o_Factura.montototal = Dt_DetFact.Rows(0)("montototal")
-                o_Factura.programacodigo = Dt_DetFact.Rows(0)("programacodigo")
-                o_Factura.programanombre = Dt_DetFact.Rows(0)("programanombre")
-                o_Factura.divisioncodigo = Dt_DetFact.Rows(0)("divisioncodigo")
-                o_Factura.divisionnombre = Dt_DetFact.Rows(0)("divisionnombre")
-                o_Factura.enviotipocodigo = Dt_DetFact.Rows(0)("enviotipocodigo")
-                o_Factura.enviotiponombre = Dt_DetFact.Rows(0)("enviotiponombre")
-                o_Factura.temporada = Dt_DetFact.Rows(0)("temporada")
+                'o_Factura.programacodigo = Dt_DetFact.Rows(0)("programacodigo")
+                'o_Factura.programanombre = Dt_DetFact.Rows(0)("programanombre")
+                'o_Factura.divisioncodigo = Dt_DetFact.Rows(0)("divisioncodigo")
+                'o_Factura.divisionnombre = Dt_DetFact.Rows(0)("divisionnombre")
+                'o_Factura.enviotipocodigo = Dt_DetFact.Rows(0)("enviotipocodigo")
+                'o_Factura.enviotiponombre = Dt_DetFact.Rows(0)("enviotiponombre")
+                'o_Factura.temporada = Dt_DetFact.Rows(0)("temporada")
                 o_Factura.prendas = Dt_DetFact.Rows(0)("prendas")
 
                 Dim items(vl_cant - 1) As item 'ARRAY DE ITEMS
@@ -1091,6 +1091,13 @@ Public Class FrmDocumentoVentaExportacion
                     items(i) = New item()
                     items(i).numero = Dt_DetFact.Rows(i)("item")
                     items(i).po = Dt_DetFact.Rows(i)("po_det")
+                    items(i).programacodigo = Dt_DetFact.Rows(0)("programacodigo")
+                    items(i).programanombre = Dt_DetFact.Rows(0)("programanombre")
+                    items(i).divisioncodigo = Dt_DetFact.Rows(0)("divisioncodigo")
+                    items(i).divisionnombre = Dt_DetFact.Rows(0)("divisionnombre")
+                    items(i).enviotipocodigo = Dt_DetFact.Rows(0)("enviotipocodigo")
+                    items(i).enviotiponombre = Dt_DetFact.Rows(0)("enviotiponombre")
+                    items(i).temporada = Dt_DetFact.Rows(0)("temporada")
                     items(i).estilocodigo = Dt_DetFact.Rows(i)("estilocodigo")
                     items(i).estilonombre = Dt_DetFact.Rows(i)("estilonombre")
                     items(i).colorcodigo = Dt_DetFact.Rows(i)("colorcodigo")
@@ -1105,7 +1112,8 @@ Public Class FrmDocumentoVentaExportacion
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
 
                 Dim client = New RestClient
-                client.BaseUrl = New Uri("http://localhost:7143/externo/facturacion/SOUTHERNTN")
+                'client.BaseUrl = New Uri("http://localhost:7143/externo/facturacion/SOUTHERNTN")
+                client.BaseUrl = New Uri("http://192.168.30.23:6790/externo/facturacion/SOUTHERNTN")
 
                 Dim request = New RestRequest
                 request.Method = Method.POST
@@ -1147,19 +1155,19 @@ Public Class FrmDocumentoVentaExportacion
         Public Property serie As String
         Public Property numero As String
         Public Property fecha As String
-        Public Property po As String
+        'Public Property po As String
         Public Property clientecodigo As String
         Public Property clientenombre As String
         Public Property montosubtotal As Decimal
         Public Property montoigv As Decimal
         Public Property montototal As Decimal
-        Public Property programacodigo As String
-        Public Property programanombre As String
-        Public Property divisioncodigo As String
-        Public Property divisionnombre As String
-        Public Property enviotipocodigo As String
-        Public Property enviotiponombre As String
-        Public Property temporada As String
+        'Public Property programacodigo As String
+        'Public Property programanombre As String
+        'Public Property divisioncodigo As String
+        'Public Property divisionnombre As String
+        'Public Property enviotipocodigo As String
+        'Public Property enviotiponombre As String
+        'Public Property temporada As String
         Public Property prendas As Integer
         Public Property items() As item()
 
@@ -1168,6 +1176,13 @@ Public Class FrmDocumentoVentaExportacion
     Public Class item
         Public Property numero As Integer
         Public Property po As String
+        Public Property programacodigo As String
+        Public Property programanombre As String
+        Public Property divisioncodigo As String
+        Public Property divisionnombre As String
+        Public Property enviotipocodigo As String
+        Public Property enviotiponombre As String
+        Public Property temporada As String
         Public Property estilocodigo As String
         Public Property estilonombre As String
         Public Property colorcodigo As String

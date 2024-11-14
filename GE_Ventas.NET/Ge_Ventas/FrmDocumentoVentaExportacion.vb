@@ -862,9 +862,6 @@ Public Class FrmDocumentoVentaExportacion
                 Case "ENVDOCEFACT"
                     If GrdLista.RowCount = 0 Then Exit Sub
 
-                    ConsumirAPIGet(GrdLista.GetValue(GrdLista.RootTable.Columns("Num_Corre").Index))
-                    Exit Sub
-
                     If GrdLista.GetValue(GrdLista.RootTable.Columns("flg_enviado_FE").Index) = "S" Then
                         MessageBox.Show("Documento ya fue enviado a F.E., verifique!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                         Exit Sub
@@ -1293,6 +1290,8 @@ Public Class FrmDocumentoVentaExportacion
             Dim respuesta As String = Envio.SendCA4XMLRequest(url, docid, comando, parametro, Datos)
             If (respuesta.Substring(0, 2).ToUpper = "OK") Then
                 MessageBox.Show("Envio Exitoso..!!" & vbCrLf & respuesta.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ''PROCESO PARA ENVIO DE FACTURA A THIMBLE - CONSUMO DE API
+                ConsumirAPIGet(GrdLista.GetValue(GrdLista.RootTable.Columns("Num_Corre").Index))
 
                 strSQL = String.Empty
                 strSQL &= vbNewLine & "EXEC cn_Ventas_Actualiza_flg_EnviadoFE"

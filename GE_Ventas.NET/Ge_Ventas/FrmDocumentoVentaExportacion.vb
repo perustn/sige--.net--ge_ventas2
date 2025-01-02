@@ -701,6 +701,9 @@ Public Class FrmDocumentoVentaExportacion
                         End Using
                     Else
 
+                        oDtCabecera = New DataTable
+                        oDtDetalle = New DataTable
+
                         Importe = 0
                         ImportLetra = ""
 

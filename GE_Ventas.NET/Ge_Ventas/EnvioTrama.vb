@@ -53,29 +53,19 @@ Public Class EnvioTrama
         Dim theCode As Integer
         Dim N As Integer
         Dim aux As String
-        N = 0
-        Do While (N _
-                    <= (data.Length - 1))
+        For N = 0 To data.Length - 1
             aChar = data.Substring(N, 1)
-
-            theCode = CType(Asc(aChar), Integer)
-            If (((theCode <= 0) _
-                        AndAlso (theCode >= 47)) _
-                        OrElse (((theCode <= 58) _
-                        AndAlso (theCode >= 64)) _
-                        OrElse (((theCode <= 91) _
-                        AndAlso (theCode >= 93)) _
-                        OrElse ((theCode <= 123) _
-                        AndAlso (theCode >= 126))))) Then
+            theCode = Microsoft.VisualBasic.AscW(aChar)
+            If (theCode >= 0 AndAlso theCode <= 47) OrElse (theCode >= 58 AndAlso theCode <= 64) OrElse (theCode >= 91 AndAlso theCode <= 93) OrElse (theCode >= 123 AndAlso theCode <= 126) Then
                 aux = (theCode + 256).ToString("X")
-                result = (result + ("%" + aux.Substring((aux.Length - 2), 2)))
+                result = result & "%" & aux.Substring(aux.Length - 2, 2)
+
             Else
-                result = (result + aChar)
+                result = result + aChar
+
             End If
 
-            N = (N + 1)
-        Loop
-
+        Next
         Return result
     End Function
 

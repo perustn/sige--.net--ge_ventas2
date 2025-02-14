@@ -226,7 +226,7 @@
             Dim oDtDataGuia As DataTable = oHP.DevuelveDatos(strSQL, cCONNECT)
 
             If oDtDataGuia.Rows.Count > 0 Then
-                scadena = oDT.Rows(0)(0).ToString
+                scadena = oDtDataGuia.Rows(0)(0).ToString
 
                 sURL = oHP.DevuelveDato("EXEC SP_IP_SERVER_ACEPTA_GR ", cCONNECT)
                 Dim Datos As String = scadena

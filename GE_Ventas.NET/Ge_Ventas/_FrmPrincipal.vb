@@ -9,13 +9,17 @@ Friend Class _FrmPrincipal
         'cCONNECTVB6 = "Provider=SQLOLEDB.1;Initial Catalog=SIGE_STN_QA_3;Data Source=192.168.30.22;uid=sa;pwd=D8t8$46nt63$"
         'cSEGURIDADVB6 = "Provider=SQLOLEDB.1;Initial Catalog=Seguridad;Data Source=192.168.30.22;uid=sa;pwd=D8t8$46nt63$"
 
+        cCONNECTVB6 = "Provider=SQLOLEDB.1;Initial Catalog=SIGE_STN;Data Source=192.168.30.55;Integrated Security = SSPI"
+        cSEGURIDADVB6 = "Provider=SQLOLEDB.1;Initial Catalog=Seguridad;Data Source=192.168.30.55;Integrated Security = SSPI"
 
+        cCONNECT = "Initial Catalog=SIGE_STN;Data Source=192.168.30.55;Integrated Security = SSPI"
+        cSEGURIDAD = "Initial Catalog=Seguridad;Data Source=192.168.30.55;Integrated Security = SSPI"
 
-        cCONNECTVB6 = "Provider=SQLOLEDB.1;Initial Catalog=SIGE_STN_PROD;Data Source=192.168.30.22;Integrated Security = SSPI"
-        cSEGURIDADVB6 = "Provider=SQLOLEDB.1;Initial Catalog=Seguridad;Data Source=192.168.30.22;Integrated Security = SSPI"
+        'cCONNECTVB6 = "Provider=SQLOLEDB.1;Initial Catalog=SIGE_STN_PROD;Data Source=192.168.30.22;Integrated Security = SSPI"
+        'cSEGURIDADVB6 = "Provider=SQLOLEDB.1;Initial Catalog=Seguridad;Data Source=192.168.30.22;Integrated Security = SSPI"
 
-        cCONNECT = "Initial Catalog=SIGE_STN_PROD;Data Source=192.168.30.22;Integrated Security = SSPI"
-        cSEGURIDAD = "Initial Catalog=Seguridad;Data Source=192.168.30.22;Integrated Security = SSPI"
+        'cCONNECT = "Initial Catalog=SIGE_STN_PROD;Data Source=192.168.30.22;Integrated Security = SSPI"
+        'cSEGURIDAD = "Initial Catalog=Seguridad;Data Source=192.168.30.22;Integrated Security = SSPI"
 
         vusu = "vluna"
         vper = "0001"

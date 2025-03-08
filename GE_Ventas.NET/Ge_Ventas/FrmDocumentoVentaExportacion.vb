@@ -1028,7 +1028,7 @@ Public Class FrmDocumentoVentaExportacion
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
 
             Dim client = New RestClient
-            'client.BaseUrl = New Uri("http://localhost:7143/externo/token/SOUTHERNTN")
+            'client.BaseUrl = New Uri("http://192.168.30.23:6791/externo/token/SOUTHERNTN")
             client.BaseUrl = New Uri("http://192.168.30.23:6790/externo/token/SOUTHERNTN")
 
             Dim request = New RestRequest
@@ -1085,6 +1085,12 @@ Public Class FrmDocumentoVentaExportacion
                 'o_Factura.temporada = Dt_DetFact.Rows(0)("temporada")
                 o_Factura.prendas = Dt_DetFact.Rows(0)("prendas")
 
+                Dim facturaagrupada As New FacturaAgrupada() With {
+                        .serie = IIf(Dt_DetFact.Rows(0)("FacturaAgrupada").ToString = "", "", Microsoft.VisualBasic.Left(Dt_DetFact.Rows(0)("FacturaAgrupada"), 3)),
+                        .numero = IIf(Dt_DetFact.Rows(0)("FacturaAgrupada").ToString = "", "", Microsoft.VisualBasic.Right(Dt_DetFact.Rows(0)("FacturaAgrupada"), 8))}
+
+                o_Factura.facturaagrupada = facturaagrupada
+
                 Dim items(vl_cant - 1) As item 'ARRAY DE ITEMS
 
                 For i As Integer = 0 To Dt_DetFact.Rows.Count - 1
@@ -1112,7 +1118,7 @@ Public Class FrmDocumentoVentaExportacion
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
 
                 Dim client = New RestClient
-                'client.BaseUrl = New Uri("http://localhost:7143/externo/facturacion/SOUTHERNTN")
+                'client.BaseUrl = New Uri("http://192.168.30.23:6791/externo/facturacion/SOUTHERNTN")
                 client.BaseUrl = New Uri("http://192.168.30.23:6790/externo/facturacion/SOUTHERNTN")
 
                 Dim request = New RestRequest
@@ -1151,6 +1157,11 @@ Public Class FrmDocumentoVentaExportacion
 
     End Class
 
+    Public Class FacturaAgrupada
+        Public Property serie As String
+        Public Property numero As String
+    End Class
+
     Public Class factura
         Public Property serie As String
         Public Property numero As String
@@ -1169,6 +1180,7 @@ Public Class FrmDocumentoVentaExportacion
         'Public Property enviotiponombre As String
         'Public Property temporada As String
         Public Property prendas As Integer
+        Public Property facturaagrupada As Object
         Public Property items() As item()
 
     End Class

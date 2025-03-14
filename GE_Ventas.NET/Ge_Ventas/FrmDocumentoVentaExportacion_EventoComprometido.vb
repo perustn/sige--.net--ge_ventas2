@@ -118,7 +118,7 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
             If FraArchivo.Visible = True Then
                 If Trim(TxtRutaArchivo.Text) <> "" Then
                     For i = 1 To GridEX2.RowCount
-                        GridEX2.Row = i
+                        GridEX2.Row = i - 1
                         Grabar(Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Nro.Factura").Index)), Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Embarque").Index)))
                     Next i
 
@@ -134,7 +134,7 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
             If FraArchivos.Visible = True Then
                 If GridEX1.RowCount > 0 Then
                     For i = 1 To GridEX2.RowCount
-                        GridEX2.Row = i
+                        GridEX2.Row = i - 1
                         Grabar(Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Nro.Factura").Index)), Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Embarque").Index)))
                     Next i
 
@@ -192,7 +192,7 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
                 Dim vlcadena As String
 
                 For i = 1 To GridEX1.RowCount
-                    GridEX1.Row = i
+                    GridEX1.Row = i - 1
                     vlcadena = Trim(GridEX1.GetValue(GridEX1.RootTable.Columns("Ruta_Archivo").Index)) & "\" & Trim(GridEX1.GetValue(GridEX1.RootTable.Columns("Nombre_Archivo").Index))
                     If CopiarArchivos(vlcadena, vlRuta_ & "\") = False Then
                         EliminarArchivos(vlRuta_)
@@ -227,7 +227,7 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
             Dim oDr As DataRow
             If Not oDtResult Is Nothing Then
                 If oDtResult.Rows.Count = 0 Then Exit Function
-                rsp = oDr("Mensaje")
+                rsp = oDtResult.Rows(0)("Mensaje")
             End If
 
             If Trim(rsp) = "" Then
@@ -245,7 +245,10 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
     Public Function CopiarArchivos(sRutaOrigen As String, sRutaFin As String) As Boolean
         Try
             If System.IO.File.Exists(sRutaOrigen) Then
-                System.IO.File.Copy(sRutaOrigen, sRutaFin, True)
+
+                Dim rutaDestino As String = Path.Combine(sRutaFin, Path.GetFileName(sRutaOrigen))
+
+                System.IO.File.Copy(sRutaOrigen, rutaDestino, True)
                 CopiarArchivos = True
             Else
                 CopiarArchivos = False
@@ -275,7 +278,7 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
 
             If FraArchivos.Visible = True Then
                 For x = 1 To GridEX1.RowCount
-                    GridEX1.Row = x
+                    GridEX1.Row = x - 1
                     vlcadena = "\" & Trim(GridEX1.GetValue(GridEX1.RootTable.Columns("Nombre_Archivo").Index))
                     vlcadena = sxRuta + vlcadena
                     System.IO.File.Delete(vlcadena)

@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{642F78FC-A798-41E7-98E1-A8D050EA4D71}|Ge_Ventas\\Ge_Ventas.vbproj|c:\\users\\mleon\\documents\\fuentes github sige\\sige--.net--ge_ventas2\\ge_ventas.net\\ge_ventas\\frmdocumentoventaexportacion_eventocomprometido.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{642F78FC-A798-41E7-98E1-A8D050EA4D71}|Ge_Ventas\\Ge_Ventas.vbproj|solutionrelative:ge_ventas\\frmdocumentoventaexportacion_eventocomprometido.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{642F78FC-A798-41E7-98E1-A8D050EA4D71}|Ge_Ventas\\Ge_Ventas.vbproj|c:\\users\\mleon\\documents\\fuentes github sige\\sige--.net--ge_ventas2\\ge_ventas.net\\ge_ventas\\frmdocumentoventaexportacion_eventocomprometido.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{642F78FC-A798-41E7-98E1-A8D050EA4D71}|Ge_Ventas\\Ge_Ventas.vbproj|solutionrelative:ge_ventas\\frmdocumentoventaexportacion_eventocomprometido.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{642F78FC-A798-41E7-98E1-A8D050EA4D71}|Ge_Ventas\\Ge_Ventas.vbproj|c:\\users\\mleon\\documents\\fuentes github sige\\sige--.net--ge_ventas2\\ge_ventas.net\\ge_ventas\\frmdocumentoventaexportacion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{642F78FC-A798-41E7-98E1-A8D050EA4D71}|Ge_Ventas\\Ge_Ventas.vbproj|solutionrelative:ge_ventas\\frmdocumentoventaexportacion.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -31,30 +39,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FrmDocumentoVentaExportacion_EventoComprometido.vb",
+              "DocumentMoniker": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion_EventoComprometido.vb",
+              "RelativeDocumentMoniker": "Ge_Ventas\\FrmDocumentoVentaExportacion_EventoComprometido.vb",
+              "ToolTip": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion_EventoComprometido.vb",
+              "RelativeToolTip": "Ge_Ventas\\FrmDocumentoVentaExportacion_EventoComprometido.vb",
+              "ViewState": "AgIAANIAAAAAAAAAAAAWwOMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-03-14T18:51:31.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmDocumentoVentaExportacion_EventoComprometido.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion_EventoComprometido.vb",
+              "RelativeDocumentMoniker": "Ge_Ventas\\FrmDocumentoVentaExportacion_EventoComprometido.vb",
+              "ToolTip": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion_EventoComprometido.vb [Dise\u00F1o]",
+              "RelativeToolTip": "Ge_Ventas\\FrmDocumentoVentaExportacion_EventoComprometido.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-03-14T18:51:25.759Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FrmDocumentoVentaExportacion.vb",
               "DocumentMoniker": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion.vb",
               "RelativeDocumentMoniker": "Ge_Ventas\\FrmDocumentoVentaExportacion.vb",
               "ToolTip": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion.vb",
               "RelativeToolTip": "Ge_Ventas\\FrmDocumentoVentaExportacion.vb",
-              "ViewState": "AgIAACMEAAAAAAAAAAApwFwEAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAC4HAAAAAAAAAAApwEIHAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-02-17T19:15:00.743Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "FrmDocumentoVentaExportacion.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion.vb",
               "RelativeDocumentMoniker": "Ge_Ventas\\FrmDocumentoVentaExportacion.vb",
               "ToolTip": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion.vb [Dise\u00F1o]",
               "RelativeToolTip": "Ge_Ventas\\FrmDocumentoVentaExportacion.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-02-17T19:14:55.116Z"
+              "WhenOpened": "2025-02-17T19:14:55.116Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb",
               "DocumentMoniker": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb",
               "RelativeDocumentMoniker": "Ge_Ventas\\FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb",
@@ -66,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\mleon\\Documents\\Fuentes GitHub SIGE\\sige--.net--ge_ventas2\\GE_Ventas.NET\\Ge_Ventas\\FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb",
               "RelativeDocumentMoniker": "Ge_Ventas\\FrmDocumentoVentaExportacion_MuestraGuiaRemision.vb",

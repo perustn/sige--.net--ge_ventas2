@@ -25,9 +25,9 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
         oDtArchivos = New DataTable
         With oDtArchivos
             With .Columns
-                .Add("Ruta_Archivo", Type.GetType("System.String"))
-                .Add("Nombre_Archivo", Type.GetType("System.String"))
-                .Add("Formato_Archivo", Type.GetType("System.String"))
+                .Add("RUTA ARCHIVO", Type.GetType("System.String"))
+                .Add("NOMBRE ARCHIVO", Type.GetType("System.String"))
+                .Add("FORMATO ARCHIVO", Type.GetType("System.String"))
             End With
         End With
 
@@ -108,7 +108,7 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
             End If
 
             For i = 1 To GridEX2.RowCount
-                GridEX2.Row = 1
+                GridEX2.Row = i - 1
                 If (oHP.DevuelveDato("SELECT DBO.DEVUELVE_FECHA_MOV_APT(" + Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Embarque").Index)) + ",'" + txtFec_ECR.Text + "')", cCONNECT)) = 1 Then
                     MessageBox.Show("Embarque : " + Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Embarque").Index)) + vbCrLf + "Fecha Evento Comprometido es MENOR al Movimiento APT..!!!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                     Exit Sub
@@ -193,7 +193,7 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
 
                 For i = 1 To GridEX1.RowCount
                     GridEX1.Row = i - 1
-                    vlcadena = Trim(GridEX1.GetValue(GridEX1.RootTable.Columns("Ruta_Archivo").Index)) & "\" & Trim(GridEX1.GetValue(GridEX1.RootTable.Columns("Nombre_Archivo").Index))
+                    vlcadena = Trim(GridEX1.GetValue(GridEX1.RootTable.Columns("RUTA ARCHIVO").Index))
                     If CopiarArchivos(vlcadena, vlRuta_ & "\") = False Then
                         EliminarArchivos(vlRuta_)
                     End If
@@ -279,7 +279,7 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
             If FraArchivos.Visible = True Then
                 For x = 1 To GridEX1.RowCount
                     GridEX1.Row = x - 1
-                    vlcadena = "\" & Trim(GridEX1.GetValue(GridEX1.RootTable.Columns("Nombre_Archivo").Index))
+                    vlcadena = "\" & Trim(GridEX1.GetValue(GridEX1.RootTable.Columns("NOMBRE ARCHIVO").Index))
                     vlcadena = sxRuta + vlcadena
                     System.IO.File.Delete(vlcadena)
                 Next x
@@ -300,18 +300,33 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
             Dim i As Long, flag As String
             Dim posicionExt As Integer
 
+            OpenFileDialog1.Multiselect = True
             OpenFileDialog1.Filter = "All Files|*.*"
             OpenFileDialog1.FileName = ""
             If OpenFileDialog1.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
-                Archivos = Split(OpenFileDialog1.FileName, Chr(0))
+                'Archivos = Split(OpenFileDialog1.FileNames.)
 
-                If UBound(Archivos) > 0 Then
-                    For i = 1 To UBound(Archivos)
-                        posicionExt = InStrRev(Archivos(i), ".")
+                If OpenFileDialog1.FileNames.Count > 1 Then
+
+                    'For i = 1 To oDtArchivos.Rows.Count
+
+                    '    oDtArchivos.Rows(i).Delete()
+                    'Next
+
+                    For n As Integer = oDtArchivos.Rows.Count - 1 To 0 Step -1
+
+                        Dim DRow As DataRow = oDtArchivos.Rows(n)
+                        oDtArchivos.Rows.Remove(DRow)
+
+                    Next
+
+
+                    For i = 0 To OpenFileDialog1.FileNames.Count - 1
+                        'posicionExt = InStrRev(Archivos(i), ".")
                         Dim oDrNUEVO As DataRow = oDtArchivos.NewRow()
-                        oDrNUEVO("Ruta_Archivo") = Archivos(0)
-                        oDrNUEVO("Nombre_Archivo") = Archivos(i)
-                        oDrNUEVO("Formato_Archivo") = CStr(Strings.Right(Archivos(i), Len(Archivos(i)) - posicionExt))
+                        oDrNUEVO("RUTA ARCHIVO") = System.IO.Path.GetFullPath(OpenFileDialog1.FileNames(i))
+                        oDrNUEVO("NOMBRE ARCHIVO") = System.IO.Path.GetFileNameWithoutExtension(OpenFileDialog1.FileNames(i))
+                        oDrNUEVO("FORMATO ARCHIVO") = System.IO.Path.GetExtension(OpenFileDialog1.FileNames(i))
                         oDtArchivos.Rows.Add(oDrNUEVO)
                     Next i
 
@@ -332,10 +347,14 @@ Public Class FrmDocumentoVentaExportacion_EventoComprometido
                                     .FilterEditType = FilterEditType.Combo
                                 End With
                             Next
-                            .Columns("Ruta_Archivo").Width = 180
-                            .Columns("Nombre_Archivo").Width = 220
-                            .Columns("Nombre_Archivo").Caption = "NOMBRE ARCHIVO"
-                            .Columns("Formato_Archivo").Width = 130
+                            .Columns("RUTA ARCHIVO").Width = 300
+                            .Columns("NOMBRE ARCHIVO").Width = 250
+                            .Columns("FORMATO ARCHIVO").Width = 80
+
+                            '.Columns("Ruta_Archivo").Caption = "RUTA ARCHIVO"
+                            '.Columns("Nombre_Archivo").Caption = "NOMBRE ARCHIVO"
+                            '.Columns("Formato_Archivo").Caption = "FORMATO ARCHIVO"
+
                         End With
                     End With
                     TxtRutaArchivo.Text = ""

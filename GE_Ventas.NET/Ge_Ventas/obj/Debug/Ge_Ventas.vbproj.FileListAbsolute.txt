@@ -483,7 +483,6 @@ C:\Users\mleon\Documents\_SIGEDebug\Ge_Ventas.exe.config
 C:\Users\mleon\Documents\_SIGEDebug\Ge_Ventas.exe
 C:\Users\mleon\Documents\_SIGEDebug\Ge_Ventas.pdb
 C:\Users\mleon\Documents\_SIGEDebug\Ge_Ventas.xml
-C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.vbproj.AssemblyReference.cache
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.vbproj.ResolveComReference.cache
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.frmBusGeneral7.resources
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.frmBusGeneral8.resources
@@ -585,7 +584,8 @@ C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NE
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.vbproj.GenerateResource.cache
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.exe.licenses
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.vbproj.CoreCompileInputs.cache
-C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.vbproj.Up2Date
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.exe
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.xml
 C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.pdb
+C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.vbprojAssemblyReference.cache
+C:\Users\mleon\Documents\Fuentes GitHub SIGE\sige--.net--ge_ventas2\GE_Ventas.NET\Ge_Ventas\obj\Debug\Ge_Ventas.vbproj.CopyComplete

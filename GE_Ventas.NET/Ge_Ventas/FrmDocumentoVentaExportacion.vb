@@ -769,9 +769,46 @@ Public Class FrmDocumentoVentaExportacion
                             End If
                         End With
                     End Using
+
+                Case "MANIFIESTO"
+                    If GrdLista.RowCount = 0 Then Exit Sub
+
+                    Dim vlCad_NumCorre As String = ""
+                    For Each oGridEXRow As GridEXRow In GrdLista.GetCheckedRows
+                        vlCad_NumCorre = vlCad_NumCorre + oGridEXRow.Cells("Num_Corre").Value + ","
+                    Next
+
+                    ImpManifiesto(vlCad_NumCorre)
+
             End Select
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+    End Sub
+
+    Sub ImpManifiesto(Cad_NumCorre As String)
+        Try
+            Dim oo As Object
+
+            Dim Adors1 As ADODB.Recordset
+            Dim ruta As String
+
+            strSQL = String.Format("EXEC CN_VENTAS_MANIFIESTO_FACTURAS '{0}','{1}'", Cad_NumCorre, vusu)
+
+
+            Dim oDtl As DataTable = oHP.DevuelveDatos(strSQL, cCONNECT)
+            Adors1 = New ADODB.Recordset
+            Adors1 = ConvertToRecordset(oDtl)
+
+
+            oo = CreateObject("excel.application")
+            oo.Workbooks.Open(vRuta & "\RptManifiesto_SIGE.XLT")
+            oo.Visible = True
+            oo.DisplayAlerts = False
+            oo.Run("reporte", cCONNECTVB6, Adors1)
+            oo = Nothing
+        Catch ex As Exception
+
         End Try
     End Sub
 

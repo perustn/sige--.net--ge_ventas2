@@ -51,6 +51,7 @@ Partial Class FrmDocumentoVentaExportacion
         Dim ButtonBar1_Item_0_10 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
         Dim ButtonBar1_Item_0_11 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
         Dim ButtonBar1_Item_0_12 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
+        Dim ButtonBar1_Item_0_13 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
         Dim ButtonBar2_Group_0 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup()
         Dim ButtonBar2_Item_0_0 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
         Dim ButtonBar2_Item_0_1 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
@@ -313,7 +314,10 @@ Partial Class FrmDocumentoVentaExportacion
         ButtonBar1_Item_0_12.Image = CType(resources.GetObject("ButtonBar1_Item_0_12.Image"), System.Drawing.Image)
         ButtonBar1_Item_0_12.Key = "ITEMOTROS"
         ButtonBar1_Item_0_12.Text = "&Agregar detalle Item - Otros"
-        ButtonBar1_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {ButtonBar1_Item_0_0, ButtonBar1_Item_0_1, ButtonBar1_Item_0_2, ButtonBar1_Item_0_3, ButtonBar1_Item_0_4, ButtonBar1_Item_0_5, ButtonBar1_Item_0_6, ButtonBar1_Item_0_7, ButtonBar1_Item_0_8, ButtonBar1_Item_0_9, ButtonBar1_Item_0_10, ButtonBar1_Item_0_11, ButtonBar1_Item_0_12})
+        ButtonBar1_Item_0_13.Image = CType(resources.GetObject("ButtonBar1_Item_0_13.Image"), System.Drawing.Image)
+        ButtonBar1_Item_0_13.Key = "MANIFIESTO"
+        ButtonBar1_Item_0_13.Text = "&Manifiesto"
+        ButtonBar1_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {ButtonBar1_Item_0_0, ButtonBar1_Item_0_1, ButtonBar1_Item_0_2, ButtonBar1_Item_0_3, ButtonBar1_Item_0_4, ButtonBar1_Item_0_5, ButtonBar1_Item_0_6, ButtonBar1_Item_0_7, ButtonBar1_Item_0_8, ButtonBar1_Item_0_9, ButtonBar1_Item_0_10, ButtonBar1_Item_0_11, ButtonBar1_Item_0_12, ButtonBar1_Item_0_13})
         ButtonBar1_Group_0.Key = "Group1"
         ButtonBar1_Group_0.Text = "Opciones"
         Me.ButtonBar1.Groups.AddRange(New Janus.Windows.ButtonBar.ButtonBarGroup() {ButtonBar1_Group_0})

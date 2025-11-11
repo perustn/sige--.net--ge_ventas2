@@ -1,10 +1,11 @@
-﻿Imports Janus.Windows.GridEX
-Imports Microsoft.Office.Interop
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports System.Net
-Imports RestSharp
-Imports Newtonsoft.Json
 Imports System.Text.Encoding
+Imports Janus.Windows
+Imports Janus.Windows.GridEX
+Imports Microsoft.Office.Interop
+Imports Newtonsoft.Json
+Imports RestSharp
 
 Public Class FrmDocumentoVentaExportacion
     Private strSQL As String = String.Empty
@@ -42,9 +43,9 @@ Public Class FrmDocumentoVentaExportacion
         dtpFecEmiIni.Value = Now.Date
         dtpFecEmiFin.Value = Now.Date
 
-        Seguridad.GetBotonesJanus(vper, vemp, Me.Name, Me.ButtonBar1, "")
-        Seguridad.GetBotonesJanus(vper, vemp, Me.Name, Me.ButtonBar2, "")
-        Seguridad.GetBotonesJanus(vper, vemp, Me.Name, Me.ButtonBar3, "")
+        'Seguridad.GetBotonesJanus(vper, vemp, Me.Name, Me.ButtonBar1, "")
+        'Seguridad.GetBotonesJanus(vper, vemp, Me.Name, Me.ButtonBar2, "")
+        'Seguridad.GetBotonesJanus(vper, vemp, Me.Name, Me.ButtonBar3, "")
 
         indicegrilla = 1
         OpcionFiltroBusqueda = "F"
@@ -72,7 +73,9 @@ Public Class FrmDocumentoVentaExportacion
                                                                          OptCorrelativo.Click,
                                                                          OptConsignatario.Click,
                                                                          OptClienteComercial.Click,
-                                                                         OptAnioMes.Click
+                                                                         OptAnioMes.Click,
+                                                                         OptPendienteFactura.Click,
+                                                                         OptFacturados.Click
         LimpiarTextos()
         Select Case (sender.TAG)
             Case "1"    'Por Fecha
@@ -104,6 +107,26 @@ Public Class FrmDocumentoVentaExportacion
                 grbClienteComercial.Visible = True
                 OpcionFiltroBusqueda = "M"
                 txtAbr_Cliente.Focus()
+
+            Case "7"    'Pendiente Por facturar
+                grbFechaEmision.Visible = False
+                grbConsignatario.Visible = False
+                grbAnioMes.Visible = False
+                grbNroDocumento.Visible = False
+                grbClienteComercial.Visible = False
+                grbCorrelativo.Visible = False
+                OpcionFiltroBusqueda = "V"
+                Call CargarGrilla()
+
+            Case "8"    'Pendiente Por facturar
+                grbFechaEmision.Visible = False
+                grbConsignatario.Visible = False
+                grbAnioMes.Visible = False
+                grbNroDocumento.Visible = False
+                grbClienteComercial.Visible = False
+                grbCorrelativo.Visible = False
+                OpcionFiltroBusqueda = "E"
+                Call CargarGrilla()
         End Select
     End Sub
 
@@ -188,7 +211,6 @@ Public Class FrmDocumentoVentaExportacion
             Busca_Opcion(1)
         End If
     End Sub
-
     Private Sub txtDes_TipAnxo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDes_TipAnxo.KeyPress
         If (Asc(e.KeyChar) = Keys.Enter) Then
             Busca_Opcion(2)
@@ -471,6 +493,35 @@ Public Class FrmDocumentoVentaExportacion
                     .Columns("NUM_REGISTRO").Width = 114
                     .Columns("NUM_REGISTRO").Caption = "NUM_REGISTRO"
 
+
+                    If .Columns.Contains("MENSAJE") Then
+                        With .Columns("MENSAJE")
+                            .Width = 300
+                            If OptFacturados.Checked = True Then
+                                .ColumnType = Janus.Windows.GridEX.ColumnType.Link
+                                .CellStyle.ForeColor = Color.Blue
+                                .CellStyle.FontUnderline = Janus.Windows.GridEX.TriState.True
+                                .TextAlignment = Janus.Windows.GridEX.TextAlignment.Near
+                            End If
+                        End With
+
+                    End If
+
+                    If OptPendienteFactura.Checked = True Then
+                        'GrdLista.RootTable.FormatConditions.Clear()
+                        If GrdLista.RootTable.Columns.Contains("MENSAJE") Then
+                            Dim vc As GridEXFormatCondition
+                            vc = New GridEXFormatCondition(GrdLista.RootTable.Columns("MENSAJE"), ConditionOperator.NotEqual, "")
+                            vc.FormatStyle.ForeColor = Color.Black
+                            vc.FormatStyle.BackColor = Color.FromArgb(240, 128, 128)
+                            vc.FormatStyle.FontBold = TriState.True
+                            GrdLista.RootTable.FormatConditions.Add(vc)
+                        End If
+                        'Else
+                        '    GrdLista.RootTable.FormatConditions.Clear()
+                    End If
+
+
                     With .Columns(K_strColCheck)
                         .Caption = "SEL"
                         .Visible = True
@@ -486,6 +537,30 @@ Public Class FrmDocumentoVentaExportacion
             'GrdLista.Row = indicegrilla
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+    End Sub
+
+
+    Private Sub GrdLista_LinkClicked(sender As Object, e As ColumnActionEventArgs) Handles GrdLista.LinkClicked
+        Try
+            If e.Column.Key.ToUpper = "MENSAJE" And OptFacturados.Checked = True Then
+                Dim fila As Janus.Windows.GridEX.GridEXRow = GrdLista.GetRow()
+
+                If fila IsNot Nothing AndAlso fila.RowType = Janus.Windows.GridEX.RowType.Record Then
+                    Dim url As String = fila.Cells("MENSAJE").Text
+
+                    If Not String.IsNullOrWhiteSpace(url) AndAlso url.StartsWith("http") Then
+                        Process.Start(New ProcessStartInfo With {
+                .FileName = url,
+                .UseShellExecute = True
+            })
+                    Else
+                        MessageBox.Show("El valor no contiene una URL válida.", "Aviso")
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error al abrir el enlace: " & ex.Message, "Error")
         End Try
     End Sub
 
@@ -770,6 +845,25 @@ Public Class FrmDocumentoVentaExportacion
                         End With
                     End Using
 
+                Case "PROCESAMIENTO"
+                    'If GrdLista.RowCount = 0 Then Exit Sub
+                    Using oDet As New FrmBandeja_PendientesFacturaCMT
+                        With oDet
+                            .ShowDialog()
+                        End With
+                    End Using
+
+                Case "FACTU006"
+                    Using oDet As New FrmBandeja_Facturacion006_CMT
+                        With oDet
+                            .txtSerie.Text = GrdLista.GetValue(GrdLista.RootTable.Columns("Serie").Index)
+                            .txtNumero.Text = GrdLista.GetValue(GrdLista.RootTable.Columns("Nro_Doc").Index)
+                            .txtCorrelativo.Text = GrdLista.GetValue(GrdLista.RootTable.Columns("Num_Corre").Index)
+                            .ShowDialog()
+                        End With
+                    End Using
+
+
                 Case "MANIFIESTO"
                     If GrdLista.RowCount = 0 Then Exit Sub
 
@@ -785,7 +879,6 @@ Public Class FrmDocumentoVentaExportacion
             MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
     End Sub
-
     Sub ImpManifiesto(Cad_NumCorre As String)
         Try
             Dim oo As Object
@@ -958,7 +1051,7 @@ Public Class FrmDocumentoVentaExportacion
                     Call FacturaCMT_Devanlay()
 
                 Case "GUIACMT"
-                    Call GuiaCMT_Devanlay
+                    Call GuiaCMT_Devanlay()
 
                 Case "VERCOBROS"
                     If GrdLista.RowCount = 0 Then Exit Sub
@@ -2271,7 +2364,7 @@ Public Class FrmDocumentoVentaExportacion
         'Drawback
         rango2 = oDtTablaDetalle.Rows.Count + 14
         rango = "B" & Trim(Str(rango2))
-        exHoja.Cells.Item(rango2, 2) = oDtTablaCabecera.Rows(0)(13).ToString   'exHoja.Range(rango & ":" & rango) = oDtTablaCabecera.Rows(0)(13).ToString
+        exHoja.Cells.Item(rango2, 2) = oDtTablaCabecera.Rows(0)(13).ToString   '<exHoja.Range(rango & ":" & rango) = oDtTablaCabecera.Rows(0)(13).ToString
         exHoja.Range(rango & ":" & rango).Font.Size = "10"
 
         exHoja.Range("B2:G2").Select()
@@ -2285,6 +2378,8 @@ Public Class FrmDocumentoVentaExportacion
         exApp = Nothing
 
     End Sub
+
+
 
     Sub GeneraFacturaElectronica(vlNum_Corre As String, vlServer As String)
         Try

@@ -86,7 +86,7 @@ Partial Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMT
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label1.Font = New System.Drawing.Font("Verdana", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Gold
-        Me.Label1.Location = New System.Drawing.Point(349, 7)
+        Me.Label1.Location = New System.Drawing.Point(353, 7)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label1.Size = New System.Drawing.Size(104, 12)
@@ -99,7 +99,7 @@ Partial Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMT
         Me.txtCorrelativo.BackColor = System.Drawing.Color.LightCyan
         Me.txtCorrelativo.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtCorrelativo.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtCorrelativo.Location = New System.Drawing.Point(466, 3)
+        Me.txtCorrelativo.Location = New System.Drawing.Point(470, 3)
         Me.txtCorrelativo.MaxLength = 0
         Me.txtCorrelativo.Name = "txtCorrelativo"
         Me.txtCorrelativo.ReadOnly = True

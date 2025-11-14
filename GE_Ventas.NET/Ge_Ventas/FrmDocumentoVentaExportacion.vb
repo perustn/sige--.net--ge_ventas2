@@ -863,6 +863,15 @@ Public Class FrmDocumentoVentaExportacion
                         End With
                     End Using
 
+                Case "MANIFIESTO"
+                    If GrdLista.RowCount = 0 Then Exit Sub
+
+                    Dim vlCad_NumCorre As String = ""
+                    For Each oGridEXRow As GridEXRow In GrdLista.GetCheckedRows
+                        vlCad_NumCorre = vlCad_NumCorre + oGridEXRow.Cells("Num_Corre").Value + ","
+                    Next
+
+                    ImpManifiesto(vlCad_NumCorre)
             End Select
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -1110,15 +1119,6 @@ Public Class FrmDocumentoVentaExportacion
                         End With
                     End Using
 
-                Case "MANIFIESTO"
-                    If GrdLista.RowCount = 0 Then Exit Sub
-
-                    Dim vlCad_NumCorre As String = ""
-                    For Each oGridEXRow As GridEXRow In GrdLista.GetCheckedRows
-                        vlCad_NumCorre = vlCad_NumCorre + oGridEXRow.Cells("Num_Corre").Value + ","
-                    Next
-
-                    ImpManifiesto(vlCad_NumCorre)
             End Select
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)

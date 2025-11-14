@@ -11,7 +11,7 @@
     <AssemblyName>Ge_Ventas</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsFormsWithCustomSubMain</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
@@ -40,6 +40,7 @@
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,6 +53,7 @@
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -79,6 +81,10 @@
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <HintPath>..\..\..\_SIGEUserControls\adodb.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Email, Version=4.3.0.0, Culture=neutral, PublicKeyToken=ad504e9f0d34714a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\_SIGEDebug\Aspose.Email.dll</HintPath>
     </Reference>
     <Reference Include="Janus.Data.v4, Version=4.0.51.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -116,6 +122,8 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="ProyectoBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\SIGE\_SIGEUserControls\ProyectoBase.dll</HintPath>
@@ -159,6 +167,30 @@
     <Compile Include="clsHELPER.vb" />
     <Compile Include="ClsWeight.vb" />
     <Compile Include="EnvioTrama.vb" />
+    <Compile Include="FrmBandeja_Facturacion006_CMT.Designer.vb">
+      <DependentUpon>FrmBandeja_Facturacion006_CMT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBandeja_Facturacion006_CMT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBandeja_Facturacion006_CMT_Envios.Designer.vb">
+      <DependentUpon>FrmBandeja_Facturacion006_CMT_Envios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBandeja_Facturacion006_CMT_Envios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBandeja_PendientesFacturaCMT.Designer.vb">
+      <DependentUpon>FrmBandeja_PendientesFacturaCMT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBandeja_PendientesFacturaCMT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBandeja_PendientesFacturaCMT_Mantenimiento.Designer.vb">
+      <DependentUpon>FrmBandeja_PendientesFacturaCMT_Mantenimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBandeja_PendientesFacturaCMT_Mantenimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBusGeneral7.designer.vb">
       <DependentUpon>frmBusGeneral7.vb</DependentUpon>
     </Compile>
@@ -331,6 +363,18 @@
       <DependentUpon>FrmDocumentoVentaExportacion_OtrosGastos_Mant.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmDocumentoVentaExportacion_OtrosGastos_Mant.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ProcesarFacturas_CMT.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_ProcesarFacturas_CMT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ProcesarFacturas_CMT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ProcesarFacturas_Nueva_Serie_CMT.Designer.vb">
+      <DependentUpon>FrmDocumentoVentaExportacion_ProcesarFacturas_Nueva_Serie_CMT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocumentoVentaExportacion_ProcesarFacturas_Nueva_Serie_CMT.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDocumentoVentaExportacion_QYCFactura.Designer.vb">
@@ -756,6 +800,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmBandeja_Facturacion006_CMT.resx">
+      <DependentUpon>FrmBandeja_Facturacion006_CMT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBandeja_Facturacion006_CMT_Envios.resx">
+      <DependentUpon>FrmBandeja_Facturacion006_CMT_Envios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBandeja_PendientesFacturaCMT.resx">
+      <DependentUpon>FrmBandeja_PendientesFacturaCMT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBandeja_PendientesFacturaCMT_Mantenimiento.resx">
+      <DependentUpon>FrmBandeja_PendientesFacturaCMT_Mantenimiento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBusGeneral7.resx">
       <DependentUpon>frmBusGeneral7.vb</DependentUpon>
     </EmbeddedResource>
@@ -842,6 +898,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDocumentoVentaExportacion_OtrosGastos_Mant.resx">
       <DependentUpon>FrmDocumentoVentaExportacion_OtrosGastos_Mant.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_ProcesarFacturas_CMT.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_ProcesarFacturas_CMT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocumentoVentaExportacion_ProcesarFacturas_Nueva_Serie_CMT.resx">
+      <DependentUpon>FrmDocumentoVentaExportacion_ProcesarFacturas_Nueva_Serie_CMT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDocumentoVentaExportacion_QYCFactura.resx">
       <DependentUpon>FrmDocumentoVentaExportacion_QYCFactura.vb</DependentUpon>

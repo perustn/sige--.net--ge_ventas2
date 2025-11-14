@@ -190,6 +190,7 @@ Partial Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
         Me.BtnFactura.Size = New System.Drawing.Size(144, 30)
         Me.BtnFactura.TabIndex = 6
         Me.BtnFactura.Text = "Factura Electrónica"
+        Me.BtnFactura.Visible = False
         Me.BtnFactura.VisualStyle = Janus.Windows.UI.VisualStyle.Office2010
         '
         'Panel3
@@ -243,7 +244,7 @@ Partial Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
         Me.Frame1.Controls.Add(Me.UiGroupBox1)
         Me.Frame1.Location = New System.Drawing.Point(3, 6)
         Me.Frame1.Name = "Frame1"
-        Me.Frame1.Size = New System.Drawing.Size(794, 437)
+        Me.Frame1.Size = New System.Drawing.Size(795, 437)
         Me.Frame1.TabIndex = 261
         Me.Frame1.Visible = False
         '

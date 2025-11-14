@@ -72,7 +72,6 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
         vlImportLetra = ""
         RegistraFactura
     End Sub
-
     Sub RegistraFactura()
         Dim vlcadena As String
 
@@ -251,14 +250,15 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
                                     .Value = 0
                                 End With
                                 With .Parameters.Add("@Tabla", SqlDbType.VarChar, 30)
-                                    .Direction = ParameterDirection.Output
+                                    .Direction = ParameterDirection.InputOutput 'Output
                                     .Value = Trim(vlTabla)
                                 End With
 
                                 With .Parameters.Add("@Msj", SqlDbType.VarChar, 300)
-                                    .Direction = ParameterDirection.Output
+                                    .Direction = ParameterDirection.InputOutput 'Output
                                     .Value = ""
                                 End With
+
                                 With .Parameters.Add("@ImpLetras", SqlDbType.VarChar, 8000)
                                     .Direction = ParameterDirection.Output
                                     .Value = Trim(vlImportLetra)
@@ -269,7 +269,6 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
                                 End With
                             End With
                             cmd.ExecuteNonQuery()
-
                             If Len(Trim(cmd.Parameters("@Msj").Value)) > 0 Then
                                 MessageBox.Show(Trim(cmd.Parameters("@Msj").Value), Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 Exit Sub
@@ -281,6 +280,9 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
                                 TxtGlosaFinal.Text = ""
                                 TxtGuia.Text = ""
                                 Frame1.Visible = False
+                                'If vlCorrelativo <> "" Then
+                                '    transaction.Commit()
+                                'End If
                             End If
                             transaction.Commit()
                         End If
@@ -294,6 +296,35 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
                         MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End Try
                 End Using
+
+
+
+
+                '' --- Segunda transacción para el subproceso ---
+                'Using cmd2 As SqlCommand = connection.CreateCommand()
+                '    Dim transaction2 As SqlTransaction = connection.BeginTransaction("EnvioSubproceso")
+                '    cmd2.Connection = connection
+                '    cmd2.Transaction = transaction2
+                '    cmd2.CommandTimeout = 0
+                '    Try
+                '        ' Ejecutamos subproceso en su propia transacción
+                '        EnvioCMTFACT005(vlCorrelativo)
+                '        transaction2.Commit()
+                '        Frame1.Visible = False
+                '        GridEX2.RootTable.Columns.Clear()
+                '        TxtGlosaFinal.Text = ""
+                '        TxtGuia.Text = ""
+                '    Catch ex As Exception
+                '        Try
+                '            transaction2.Rollback()
+                '        Catch ex2 As Exception
+                '            MessageBox.Show(ex2.Message, "Error al revertir segunda transacción", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                '        End Try
+                '        MessageBox.Show(ex.Message, "Error en subproceso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                '    End Try
+                'End Using
+
+
             End Using
         End If
     End Sub
@@ -332,7 +363,9 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
         End If
 
         Dim Datos As String = (vlsCab + (vlsDet + "/"))
-        url = "http://192.168.30.4:5002/ca4xml" '"http://192.168.30.9:5001/ca4xml"
+        url = "http: //192.168.30.4:5002/ca4xml"  '"http: //192.168.30.9:5001/ca4xml"
+        'url = "http://192.168.30.30:5001/ca4xml"   'PARA PRUEBAS
+
         Dim docid As String = "FF12-001"
         Dim comando As String = "emitir"
         Dim parametro As String = ""
@@ -357,6 +390,7 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
                         .Connection.Open()
                         oDtDetalle.Load(.ExecuteReader)
                     End With
+
                     If oCmd.Parameters("@P_MSJ").Value = "" Then
                         MessageBox.Show("Envio Exitoso..!!" & vbCrLf & respuesta.ToString, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
@@ -376,70 +410,74 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMTVerFact
         Frame1.Visible = False
     End Sub
 
+    Private Sub GridEX2_FormattingRow(sender As Object, e As RowLoadEventArgs) Handles GridEX2.FormattingRow
+
+    End Sub
+
     Private Sub BtnFactura_Click(sender As Object, e As EventArgs) Handles BtnFactura.Click
-        Try
-            DTPicker1.Value = Now.Date
+        'Try
+        'DTPicker1.Value = Now.Date
 
-            strSQL = String.Empty
-            strSQL &= vbNewLine & "EXEC CN_MUESTRA_Ventas_Facturas_CMT_Detalle_FE"
-            strSQL &= vbNewLine & String.Format(" @NUM_CORRE   = '{0}'", TxtNroCorrelativo.Text)
-            strSQL &= vbNewLine & String.Format(",@COD_PURORD  = '{0}'", TxtPO.Text)
-            strSQL &= vbNewLine & String.Format(",@COD_ESTCLI  = '{0}'", TxtEstilo.Text)
-            strSQL &= vbNewLine & String.Format(",@Fecha       = '{0}'", "")
+        strSQL = String.Empty
+        strSQL &= vbNewLine & "EXEC CN_MUESTRA_Ventas_Facturas_CMT_Detalle_FE"
+        strSQL &= vbNewLine & String.Format(" @NUM_CORRE   = '{0}'", TxtNroCorrelativo.Text)
+        strSQL &= vbNewLine & String.Format(",@COD_PURORD  = '{0}'", TxtPO.Text)
+        strSQL &= vbNewLine & String.Format(",@COD_ESTCLI  = '{0}'", TxtEstilo.Text)
+        strSQL &= vbNewLine & String.Format(",@Fecha       = '{0}'", "")
 
-            oDT = oHP.DevuelveDatos(strSQL, cCONNECT)
-            GridEX2.DataSource = oDT
-            CheckLayoutGridEx(GridEX2)
+        oDT = oHP.DevuelveDatos(strSQL, cCONNECT)
+        GridEX2.DataSource = oDT
+        CheckLayoutGridEx(GridEX2)
 
-            With GridEX2
-                .FilterMode = FilterMode.None
-                With .RootTable
-                    .HeaderLines = 2
-                    .PreviewRow = False
-                    .PreviewRowLines = 10
-                    .RowHeight = 30
-                    For Each oGridEXColumn As GridEXColumn In .Columns
-                        With oGridEXColumn
-                            .WordWrap = True
-                            .FilterEditType = FilterEditType.Combo
-                        End With
-                    Next
+        With GridEX2
+            .FilterMode = FilterMode.None
+            With .RootTable
+                .HeaderLines = 2
+                .PreviewRow = False
+                .PreviewRowLines = 10
+                .RowHeight = 30
+                For Each oGridEXColumn As GridEXColumn In .Columns
+                    With oGridEXColumn
+                        .WordWrap = True
+                        .FilterEditType = FilterEditType.Combo
+                    End With
+                Next
 
-                    .Columns("Descripcion_Adicional").Visible = False
-                    .Columns("UN").Visible = False
-                    .Columns("Num_Guia").Visible = False
-                    .Columns("Factura").Visible = False
-                    .Columns("Prendas").Width = 90
-                    .Columns("Precio").Width = 90
-                    .Columns("Partida").Width = 90
-                    .Columns("Fecha").Width = 100
-                    .Columns("Valor_Venta").Width = 100
-                    .Columns("Total").Width = 100
-                    .Columns("Descripcion").Width = 190
-                End With
+                .Columns("Descripcion_Adicional").Visible = False
+                .Columns("UN").Visible = False
+                .Columns("Num_Guia").Visible = False
+                .Columns("Factura").Visible = False
+                .Columns("Prendas").Width = 90
+                .Columns("Precio").Width = 90
+                .Columns("Partida").Width = 90
+                .Columns("Fecha").Width = 100
+                .Columns("Valor_Venta").Width = 100
+                .Columns("Total").Width = 100
+                .Columns("Descripcion").Width = 190
             End With
+        End With
 
-            If GridEX2.RowCount = 0 Then
-                Exit Sub
-            End If
+        If GridEX2.RowCount = 0 Then
+            Exit Sub
+        End If
 
-            TxtGlosaFinal.Text = "^^SERVICIO DE FABRICACION DE PRENDA POR ENCARGO SEGUN CONTRATO^" & Strings.Left(Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Ruta").Index)), Len(Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Ruta").Index))) - 1) _
+        TxtGlosaFinal.Text = "^^SERVICIO DE FABRICACION DE PRENDA POR ENCARGO SEGUN CONTRATO^" & Strings.Left(Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Ruta").Index)), Len(Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Ruta").Index))) - 1) _
             & "^O/S:" & Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Oservicio_CMT").Index)) & "^Descripcion Contiene:PARTIDA,PO,ESTILO"
 
-            TxtGuia.Text = Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Num_Guia").Index))
-            '^^SERVICIO DE FABRICACION DE PRENDA POR ENCARGO SEGUN CONTRATO^(COR),(EST),(COS),(LAV),(PLA),(PEG),(ACA),^O/S: 100-018723^Descripcion Contiene: PARTIDA, PO, ESTILO
+        TxtGuia.Text = Trim(GridEX2.GetValue(GridEX2.RootTable.Columns("Num_Guia").Index))
+        '^^SERVICIO DE FABRICACION DE PRENDA POR ENCARGO SEGUN CONTRATO^(COR),(EST),(COS),(LAV),(PLA),(PEG),(ACA),^O/S: 100-018723^Descripcion Contiene: PARTIDA, PO, ESTILO
 
-            GridEX2.FrozenColumns = 3
-            Frame1.Visible = True
-            Exit Sub
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End Try
+        GridEX2.FrozenColumns = 3
+        Frame1.Visible = True
+        Exit Sub
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'End Try
     End Sub
 
     Private Sub BtnCalcular_Click(sender As Object, e As EventArgs) Handles BtnCalcular.Click
         Try
-            DTPicker1.Value = Now.Date
+            'DTPicker1.Value = Now.Date
 
             strSQL = String.Empty
             strSQL &= vbNewLine & "EXEC CN_MUESTRA_Ventas_Facturas_CMT_Detalle_FE"

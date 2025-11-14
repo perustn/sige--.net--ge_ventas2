@@ -68,6 +68,7 @@ Public Class FrmDocumentoVentaExportacion_GenFacturasGuiasCMT
                             strSQL &= vbNewLine & String.Format(" @num_corre    = '{0}'", txtCorrelativo.Text)
                             strSQL &= vbNewLine & String.Format(",@opcion       = '{0}'", "1")
                             strSQL &= vbNewLine & String.Format(",@Cod_Usuario  = '{0}'", vusu)
+                            strSQL &= vbNewLine & String.Format(",@Flg_Facturacion_Automatica  = '{0}'", "S")
                             If oHP.EjecutaOperacion(strSQL, cCONNECT) Then
                                 CargarGrilla()
                             End If

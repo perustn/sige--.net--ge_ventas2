@@ -53,6 +53,7 @@ Partial Class FrmDocumentoVentaExportacion
         Dim ButtonBar1_Item_0_12 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
         Dim ButtonBar1_Item_0_13 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
         Dim ButtonBar1_Item_0_14 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
+        Dim ButtonBar1_Item_0_15 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
         Dim ButtonBar2_Group_0 As Janus.Windows.ButtonBar.ButtonBarGroup = New Janus.Windows.ButtonBar.ButtonBarGroup()
         Dim ButtonBar2_Item_0_0 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
         Dim ButtonBar2_Item_0_1 As Janus.Windows.ButtonBar.ButtonBarItem = New Janus.Windows.ButtonBar.ButtonBarItem()
@@ -314,11 +315,15 @@ Partial Class FrmDocumentoVentaExportacion
         ButtonBar1_Item_0_12.Text = "&Agregar detalle Item - Otros"
         ButtonBar1_Item_0_13.Image = CType(resources.GetObject("ButtonBar1_Item_0_13.Image"), System.Drawing.Image)
         ButtonBar1_Item_0_13.Key = "MANIFIESTO"
-        ButtonBar1_Item_0_13.Text = "&Manifiesto"
-        ButtonBar1_Item_0_14.Key = "FACTU006"
-        ButtonBar1_Item_0_14.Text = "Facturacion CMT Nueva Serie"
-        ButtonBar1_Item_0_14.TextAlignment = Janus.Windows.ButtonBar.Alignment.Center
-        ButtonBar1_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {ButtonBar1_Item_0_0, ButtonBar1_Item_0_1, ButtonBar1_Item_0_2, ButtonBar1_Item_0_3, ButtonBar1_Item_0_4, ButtonBar1_Item_0_5, ButtonBar1_Item_0_6, ButtonBar1_Item_0_7, ButtonBar1_Item_0_8, ButtonBar1_Item_0_9, ButtonBar1_Item_0_10, ButtonBar1_Item_0_11, ButtonBar1_Item_0_12, ButtonBar1_Item_0_13, ButtonBar1_Item_0_14})
+        ButtonBar1_Item_0_13.Text = "Manifiesto"
+        ButtonBar1_Item_0_14.Image = CType(resources.GetObject("ButtonBar1_Item_0_14.Image"), System.Drawing.Image)
+        ButtonBar1_Item_0_14.Key = "PROCESAMIENTO"
+        ButtonBar1_Item_0_14.Text = "Facturas CMT"
+        ButtonBar1_Item_0_15.Image = CType(resources.GetObject("ButtonBar1_Item_0_15.Image"), System.Drawing.Image)
+        ButtonBar1_Item_0_15.Key = "FACTU006"
+        ButtonBar1_Item_0_15.Text = "Facturacion CMT Nueva Serie"
+        ButtonBar1_Item_0_15.TextAlignment = Janus.Windows.ButtonBar.Alignment.Center
+        ButtonBar1_Group_0.Items.AddRange(New Janus.Windows.ButtonBar.ButtonBarItem() {ButtonBar1_Item_0_0, ButtonBar1_Item_0_1, ButtonBar1_Item_0_2, ButtonBar1_Item_0_3, ButtonBar1_Item_0_4, ButtonBar1_Item_0_5, ButtonBar1_Item_0_6, ButtonBar1_Item_0_7, ButtonBar1_Item_0_8, ButtonBar1_Item_0_9, ButtonBar1_Item_0_10, ButtonBar1_Item_0_11, ButtonBar1_Item_0_12, ButtonBar1_Item_0_13, ButtonBar1_Item_0_14, ButtonBar1_Item_0_15})
         ButtonBar1_Group_0.Key = "Group1"
         ButtonBar1_Group_0.Text = "Opciones"
         Me.ButtonBar1.Groups.AddRange(New Janus.Windows.ButtonBar.ButtonBarGroup() {ButtonBar1_Group_0})
@@ -441,7 +446,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.rbtContraer.AutoSize = True
         Me.rbtContraer.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbtContraer.ForeColor = System.Drawing.Color.Black
-        Me.rbtContraer.Location = New System.Drawing.Point(8, 4)
+        Me.rbtContraer.Location = New System.Drawing.Point(7, 4)
         Me.rbtContraer.Name = "rbtContraer"
         Me.rbtContraer.Size = New System.Drawing.Size(129, 20)
         Me.rbtContraer.TabIndex = 89
@@ -495,6 +500,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.OptFacturados.Cursor = System.Windows.Forms.Cursors.Default
         Me.OptFacturados.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.OptFacturados.ForeColor = System.Drawing.Color.Black
+        Me.OptFacturados.Image = CType(resources.GetObject("OptFacturados.Image"), System.Drawing.Image)
         Me.OptFacturados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.OptFacturados.Location = New System.Drawing.Point(4, 348)
         Me.OptFacturados.Name = "OptFacturados"
@@ -512,6 +518,7 @@ Partial Class FrmDocumentoVentaExportacion
         Me.OptPendienteFactura.Cursor = System.Windows.Forms.Cursors.Default
         Me.OptPendienteFactura.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.OptPendienteFactura.ForeColor = System.Drawing.Color.Black
+        Me.OptPendienteFactura.Image = CType(resources.GetObject("OptPendienteFactura.Image"), System.Drawing.Image)
         Me.OptPendienteFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.OptPendienteFactura.Location = New System.Drawing.Point(5, 325)
         Me.OptPendienteFactura.Name = "OptPendienteFactura"
